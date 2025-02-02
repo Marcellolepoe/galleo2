@@ -96,7 +96,7 @@ export function AutomatedFilling({
   return (
     <div
       className={cn(
-        "relative flex h-96 flex-col overflow-hidden rounded-lg md:border md:bg-background md:p-6 md:shadow-xl",
+        "relative mx-auto flex h-96 flex-col overflow-hidden rounded-lg bg-background md:border md:p-6 md:shadow-xl",
         className,
       )}
     >

@@ -32,6 +32,7 @@ export function FeatureSection({
         <div className="mt-6 text-lg text-muted-foreground">{description}</div>
         <a
           href={siteConfig.links.talkToUs}
+          data-attr={ctaText}
           target="_blank"
           className="mt-8 flex items-center font-medium text-muted-foreground text-sm hover:text-foreground"
           rel="noreferrer"
@@ -50,7 +51,7 @@ export function FeatureSection({
 
   return (
     <section className="container max-w-7xl px-0">
-      <div className="grid w-full overflow-hidden rounded-lg md:grid-cols-2">
+      <div className="grid w-full overflow-hidden md:grid-cols-2 xl:rounded-lg">
         {/* On mobile, ShowcaseSection is always first */}
         <div className="md:hidden">{ShowcaseSection}</div>
         <div className="md:hidden">{ContentSection}</div>

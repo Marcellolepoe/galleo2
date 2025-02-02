@@ -10,23 +10,27 @@ import {
 } from "@galleo/ui/components/drawer";
 import { ThemeToggle } from "@galleo/ui/components/theme-toggle";
 import { Icons } from "@galleo/ui/icon";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { siteConfig } from "~/lib/site-config";
 import { BrandButton } from "./brand-button";
 
 export function SiteDrawer() {
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
 
-  const handleNavClick = (hash: string | undefined) => {
+  const handleNavClick = (url: string | undefined) => {
     // Close drawer first
     setIsOpen(false);
 
     // If there's a hash, scroll to the element after drawer closes
-    if (hash) {
+    if (url?.includes("#")) {
       setTimeout(() => {
-        const element = document.querySelector(hash);
+        const element = document.querySelector(url);
         element?.scrollIntoView({ behavior: "smooth" });
       }, 300); // Adjust timeout based on your drawer's close animation duration
+    } else if (url) {
+      router.push(url);
     }
   };
 
@@ -59,6 +63,7 @@ export function SiteDrawer() {
                           ? "ghost"
                           : item.buttonVariant
                       }
+                      data-attr={`site-drawer-${item.label}`}
                     >
                       {item.label}
                     </Button>

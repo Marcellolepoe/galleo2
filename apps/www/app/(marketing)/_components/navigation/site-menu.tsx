@@ -72,6 +72,7 @@ function SiteMenuButton({
     <NavigationMenuLink asChild>
       <Link
         href={href}
+        data-attr={`header-button-${label}`}
         className={
           buttonVariant === "navigation"
             ? navigationMenuTriggerStyle()
