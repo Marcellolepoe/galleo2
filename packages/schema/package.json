@@ -13,8 +13,8 @@
     "build": "tsc",
     "dev": "tsc --watch",
     "clean": "rm -rf .turbo node_modules dist .cache",
-    "format": "bunx @biomejs/biome format . --write",
-    "lint": "bunx @biomejs/biome lint . --write",
+    "format": "bun x @biomejs/biome format . --write",
+    "lint": "bun x @biomejs/biome lint . --write",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
   "dependencies": {

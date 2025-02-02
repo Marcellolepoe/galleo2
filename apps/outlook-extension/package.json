@@ -18,8 +18,8 @@
     "stop": "office-addin-debugging stop manifest.xml",
     "validate": "office-addin-manifest validate manifest.xml",
     "clean": "rm -rf .turbo node_modules .cache",
-    "lint": "bunx @biomejs/biome lint . --write",
-    "format": "bunx @biomejs/biome format . --write",
+    "lint": "bun x @biomejs/biome lint . --write",
+    "format": "bun x @biomejs/biome format . --write",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

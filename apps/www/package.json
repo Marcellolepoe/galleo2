@@ -6,15 +6,15 @@
   "scripts": {
     "dev": "bun with-env bun run dev:node",
     "dev:node": "next dev --port 6969",
-    "dev:cloudflare": "bunx dotenvx decrypt -f ../../.env  --stdout > .dev.vars && wrangler dev --port 8771",
+    "dev:cloudflare": "bun x dotenvx decrypt -f ../../.env  --stdout > .dev.vars && wrangler dev --port 8771",
     "build": "bun run build:node",
     "build:node": "next build",
     "build:cloudflare": "opennextjs-cloudflare",
     "with-env": "dotenvx run -f ../../.env --",
     "start": "next start",
     "clean": "rm -rf .turbo node_modules .next .cache",
-    "lint": "bunx @biomejs/biome lint . --write",
-    "format": "bunx @biomejs/biome format . --write",
+    "lint": "bun x @biomejs/biome lint . --write",
+    "format": "bun x @biomejs/biome format . --write",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
   "dependencies": {
