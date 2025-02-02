@@ -24,8 +24,8 @@ next-env.d.ts
 
 # production
 build
-dist/
-.cache/
+dist
+.cache
 
 # generated types
 .astro/

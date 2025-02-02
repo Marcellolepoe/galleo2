@@ -1,4 +1,4 @@
-import type { IconProps } from "./icons";
+import type { IconProps } from "../icon";
 
 export function BrandLogo(props: IconProps) {
   return (

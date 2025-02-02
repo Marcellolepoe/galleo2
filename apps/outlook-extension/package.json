@@ -17,7 +17,7 @@
     "start": "office-addin-debugging start manifest.xml --app outlook --dev-server \"bun run dev-server\"",
     "stop": "office-addin-debugging stop manifest.xml",
     "validate": "office-addin-manifest validate manifest.xml",
-    "clean": "rm -rf .turbo node_modules .cache",
+    "clean": "git clean -xdf .turbo node_modules .cache",
     "lint": "bun x @biomejs/biome lint . --write",
     "format": "bun x @biomejs/biome format . --write",
     "typecheck": "tsc --noEmit"

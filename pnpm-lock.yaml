@@ -187,6 +187,9 @@ importers:
         specifier: ^0.39.1
         version: 0.39.1(@types/react@19.0.8)(better-sqlite3@11.8.1)(react@19.0.0)
     devDependencies:
+      '@galleo/typescript':
+        specifier: workspace:*
+        version: link:../../tooling/typescript
       drizzle-kit:
         specifier: ^0.30.4
         version: 0.30.4
@@ -200,12 +203,18 @@ importers:
         specifier: ^3.12.7
         version: 3.12.7
     devDependencies:
+      '@galleo/typescript':
+        specifier: workspace:*
+        version: link:../../tooling/typescript
       typescript:
         specifier: 'catalog:'
         version: 5.7.3
 
   packages/ui:
     dependencies:
+      '@galleo/typescript':
+        specifier: workspace:*
+        version: link:../../tooling/typescript
       '@hookform/resolvers':
         specifier: npm:@dudeofawesome/hookform-resolvers@4.0.0-effect-upgrade-2
         version: '@dudeofawesome/hookform-resolvers@4.0.0-effect-upgrade-2(react-hook-form@7.54.2(react@19.0.0))'
@@ -254,6 +263,9 @@ importers:
       '@radix-ui/react-use-controllable-state':
         specifier: ^1.1.0
         version: 1.1.0(@types/react@19.0.8)(react@19.0.0)
+      '@types/react':
+        specifier: catalog:react19
+        version: 19.0.8
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -300,9 +312,6 @@ importers:
       react:
         specifier: catalog:react19
         version: 19.0.0
-      react-dom:
-        specifier: catalog:react19
-        version: 19.0.0(react@19.0.0)
       tailwindcss:
         specifier: 'catalog:'
         version: 3.4.17(ts-node@10.9.2(@types/node@22.13.0)(typescript@5.7.3))
