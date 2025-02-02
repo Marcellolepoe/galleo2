@@ -1,0 +1,211 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.17/MicrosoftTeams.schema.json",
+  "id": "efb57cb5-19a9-427e-ac04-3a64848115d2",
+  "manifestVersion": "1.17",
+  "version": "1.0.0",
+  "name": {
+    "short": "Galleo Assist",
+    "full": "Galleo Assistant"
+  },
+  "description": {
+    "short": "Trademark Galleo Assistant",
+    "full": "Trademark Galleo Assistant"
+  },
+  "developer": {
+    "name": "Contoso",
+    "websiteUrl": "https://www.contoso.com",
+    "privacyUrl": "https://www.contoso.com/privacy",
+    "termsOfUseUrl": "https://www.contoso.com/servicesagreement"
+  },
+  "icons": {
+    "outline": "assets/outline.png",
+    "color": "assets/color.png"
+  },
+  "accentColor": "#230201",
+  "localizationInfo": {
+    "defaultLanguageTag": "en-us",
+    "additionalLanguages": []
+  },
+  "authorization": {
+    "permissions": {
+      "resourceSpecific": [
+        {
+          "name": "MailboxItem.Read.User",
+          "type": "Delegated"
+        }
+      ]
+    }
+  },
+  "validDomains": ["contoso.com"],
+  "extensions": [
+    {
+      "requirements": {
+        "scopes": ["mail"],
+        "capabilities": [
+          {
+            "name": "Mailbox",
+            "minVersion": "1.3"
+          },
+          {
+            "name": "KeyboardShortcuts",
+            "minVersion": "1.1"
+          }
+        ]
+      },
+
+      "runtimes": [
+        {
+          "requirements": {
+            "capabilities": [
+              {
+                "name": "Mailbox",
+                "minVersion": "1.3"
+              }
+            ]
+          },
+          "id": "TaskPaneRuntime",
+          "type": "general",
+          "code": {
+            "page": "https://localhost:3099"
+          },
+          "lifetime": "short",
+          "actions": [
+            {
+              "id": "TaskPaneRuntimeShow",
+              "type": "openPage",
+              "pinnable": false,
+              "view": "dashboard"
+            }
+          ]
+        },
+        {
+          "id": "CommandsRuntime",
+          "type": "general",
+          "code": {
+            "page": "https://localhost:3099/commands",
+            "script": "https://localhost:3099/commands-headless"
+          },
+          "lifetime": "short",
+          "actions": [
+            {
+              "id": "action",
+              "type": "executeFunction"
+            }
+          ]
+        }
+      ],
+      "ribbons": [
+        {
+          "contexts": ["mailRead"],
+          "tabs": [
+            {
+              "builtInTabId": "TabDefault",
+              "label": "Draft Response",
+              "groups": [
+                {
+                  "id": "msgReadGroup",
+                  "label": "Galleo Assistant",
+                  "icons": [
+                    {
+                      "size": 16,
+                      "url": "https://localhost:3099/assets/icon-16.png"
+                    },
+                    {
+                      "size": 32,
+                      "url": "https://localhost:3099/assets/icon-32.png"
+                    },
+                    {
+                      "size": 80,
+                      "url": "https://localhost:3099/assets/icon-80.png"
+                    }
+                  ],
+                  "controls": [
+                    {
+                      "id": "createDraftResponse",
+                      "type": "button",
+                      "label": "Create Draft Response",
+                      "icons": [
+                        {
+                          "size": 16,
+                          "url": "https://localhost:3099/assets/icon-16.png"
+                        },
+                        {
+                          "size": 32,
+                          "url": "https://localhost:3099/assets/icon-32.png"
+                        },
+                        {
+                          "size": 80,
+                          "url": "https://localhost:3099/assets/icon-80.png"
+                        }
+                      ],
+                      "supertip": {
+                        "title": "Create Draft Response",
+                        "description": "Creates a draft response for the selected email."
+                      },
+                      "actionId": "TaskPaneRuntimeShow"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "contexts": ["mailCompose"],
+          "tabs": [
+            {
+              "builtInTabId": "TabDefault",
+              "label": "Insert Response",
+              "groups": [
+                {
+                  "id": "msgComposeGroup",
+                  "label": "Galleo Assistant",
+                  "icons": [
+                    {
+                      "size": 16,
+                      "url": "https://localhost:3099/assets/icon-16.png"
+                    },
+                    {
+                      "size": 32,
+                      "url": "https://localhost:3099/assets/icon-32.png"
+                    },
+                    {
+                      "size": 80,
+                      "url": "https://localhost:3099/assets/icon-80.png"
+                    }
+                  ],
+                  "controls": [
+                    {
+                      "id": "insertDraftResponse",
+                      "type": "button",
+                      "label": "Insert Draft Response",
+                      "icons": [
+                        {
+                          "size": 16,
+                          "url": "https://localhost:3099/assets/icon-16.png"
+                        },
+                        {
+                          "size": 32,
+                          "url": "https://localhost:3099/assets/icon-32.png"
+                        },
+                        {
+                          "size": 80,
+                          "url": "https://localhost:3099/assets/icon-80.png"
+                        }
+                      ],
+                      "supertip": {
+                        "title": "Insert Draft Response",
+                        "description": "Inserts a draft response into your email."
+                      },
+                      "actionId": "TaskPaneRuntimeShow"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

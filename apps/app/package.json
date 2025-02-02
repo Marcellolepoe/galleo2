@@ -1,0 +1,38 @@
+{
+  "name": "@galleo/app",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "bun run dev:node",
+    "dev:node": "next dev --port 6969",
+    "dev:cloudflare": "bunx dotenvx decrypt -f ../../.env  --stdout > .dev.vars && wrangler dev --port 8771",
+    "build": "bun run build:node",
+    "build:node": "next build",
+    "build:cloudflare": "opennextjs-cloudflare",
+    "start": "next start",
+    "clean": "rm -rf .turbo node_modules .next .cache",
+    "lint": "bunx @biomejs/biome lint . --write",
+    "format": "bunx @biomejs/biome format . --write",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false"
+  },
+  "dependencies": {
+    "@galleo/db": "workspace:*",
+    "@galleo/schema": "workspace:*",
+    "@galleo/ui": "workspace:*",
+    "@tanstack/react-query": "catalog:react-query",
+    "@tanstack/react-query-devtools": "catalog:react-query",
+    "effect": "^3.12.7",
+    "next": "15.1.6",
+    "react": "catalog:react19",
+    "react-dom": "catalog:react19"
+  },
+  "devDependencies": {
+    "@galleo/typescript": "workspace:*",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:react19",
+    "@types/react-dom": "catalog:react19",
+    "jiti": "^2.4.1",
+    "typescript": "catalog:"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "extends": "@galleo/typescript/tsconfig.base.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "module": "ES2022",
+    "lib": ["dom", "dom.iterable", "ES2022"],
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["src/*"]
+    }
+  }
+}

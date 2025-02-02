@@ -1,0 +1,49 @@
+{
+  "name": "@galleo/outlook-extension",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "config": {
+    "app_type_to_debug": "web",
+    "dev_server_port": 3099
+  },
+  "scripts": {
+    "dev": "tsx dev.ts",
+    "build": "vinxi build",
+    "serve": "vinxi preview",
+    "lint:fix": "office-addin-lint fix",
+    "signin": "office-addin-dev-settings m365-account login",
+    "signout": "office-addin-dev-settings m365-account logout",
+    "start": "office-addin-debugging start manifest.xml --app outlook --dev-server \"bun run dev\"",
+    "stop": "office-addin-debugging stop manifest.xml",
+    "validate": "office-addin-manifest validate manifest.xml",
+    "clean": "rm -rf .turbo node_modules .cache",
+    "lint": "bunx @biomejs/biome lint . --write",
+    "format": "bunx @biomejs/biome format . --write",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@galleo/ui": "workspace:*",
+    "@microsoft/office-js": "^1.1.105",
+    "@tanstack/react-router": "^1.99.0",
+    "@tanstack/router-devtools": "^1.99.0",
+    "react": "catalog:react19",
+    "react-dom": "catalog:react19"
+  },
+  "devDependencies": {
+    "@galleo/typescript": "workspace:*",
+    "@tanstack/router-plugin": "^1.99.0",
+    "@types/node": "catalog:",
+    "@types/office-js": "^1.0.462",
+    "@types/react": "catalog:react19",
+    "@types/react-dom": "catalog:react19",
+    "@vitejs/plugin-react": "^4.3.2",
+    "office-addin-debugging": "^5.1.6",
+    "office-addin-dev-settings": "^2.3.6",
+    "office-addin-lint": "^2.3.5",
+    "office-addin-manifest": "^1.13.6",
+    "vite": "^6.0.3",
+    "vite-plugin-mkcert": "^1.17.6",
+    "vite-tsconfig-paths": "^5.1.4"
+  }
+}

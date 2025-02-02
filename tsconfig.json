@@ -1,0 +1,4 @@
+{
+  "extends": "@galleo/typescript/tsconfig.base.json",
+  "exclude": ["apps", "packages", "dist"]
+}

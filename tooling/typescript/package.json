@@ -1,0 +1,5 @@
+{
+  "name": "@galleo/typescript",
+  "private": true,
+  "files": ["*.json"]
+}
