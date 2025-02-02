@@ -8,13 +8,13 @@
     "dev_server_port": 3099
   },
   "scripts": {
-    "dev": "tsx dev.ts",
+    "dev-server": "tsx dev.ts",
     "build": "vinxi build",
     "serve": "vinxi preview",
     "lint:fix": "office-addin-lint fix",
     "signin": "office-addin-dev-settings m365-account login",
     "signout": "office-addin-dev-settings m365-account logout",
-    "start": "office-addin-debugging start manifest.xml --app outlook --dev-server \"bun run dev\"",
+    "start": "office-addin-debugging start manifest.xml --app outlook --dev-server \"bun run dev-server\"",
     "stop": "office-addin-debugging stop manifest.xml",
     "validate": "office-addin-manifest validate manifest.xml",
     "clean": "rm -rf .turbo node_modules .cache",

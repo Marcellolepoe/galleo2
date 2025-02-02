@@ -1,5 +1,5 @@
 {
-  "name": "@galleo/app",
+  "name": "@galleo/www",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -23,6 +23,7 @@
     "@tanstack/react-query": "catalog:react-query",
     "@tanstack/react-query-devtools": "catalog:react-query",
     "effect": "^3.12.7",
+    "framer-motion": "^12.0.6",
     "next": "15.1.6",
     "react": "catalog:react19",
     "react-dom": "catalog:react19"

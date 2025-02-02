@@ -12,6 +12,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
+        serif: ["var(--font-playfair)", ...fontFamily.serif],
         sans: ["var(--font-geist-sans)", ...fontFamily.sans],
         mono: ["var(--font-geist-mono)", ...fontFamily.mono],
       },
