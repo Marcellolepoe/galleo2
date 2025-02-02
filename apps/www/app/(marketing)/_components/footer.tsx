@@ -1,4 +1,4 @@
-import { ChevronRight } from "lucide-react";
+import { Icons } from "@galleo/ui/icon";
 import Link from "next/link";
 import { siteConfig } from "~/lib/site-config";
 import { BrandButton } from "./navigation/brand-button";
@@ -22,7 +22,7 @@ export default function Footer() {
                     >
                       {link.icon && link.icon}
                       {link.text}
-                      <ChevronRight className="size-4 translate-x-0 opacity-0 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:opacity-100" />
+                      <Icons.chevronRight className="size-4 translate-x-0 opacity-0 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:opacity-100" />
                     </Link>
                   </li>
                 ))}

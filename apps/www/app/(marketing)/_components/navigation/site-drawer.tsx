@@ -9,7 +9,7 @@ import {
   DrawerTrigger,
 } from "@galleo/ui/components/drawer";
 import { ThemeToggle } from "@galleo/ui/components/theme-toggle";
-import { MenuIcon } from "lucide-react";
+import { Icons } from "@galleo/ui/icon";
 import { useState } from "react";
 import { siteConfig } from "~/lib/site-config";
 import { BrandButton } from "./brand-button";
@@ -33,7 +33,7 @@ export function SiteDrawer() {
   return (
     <Drawer open={isOpen} onOpenChange={setIsOpen}>
       <DrawerTrigger>
-        <MenuIcon className="text-2xl" />
+        <Icons.menu className="text-2xl" />
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader className="px-6">

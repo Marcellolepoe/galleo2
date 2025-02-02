@@ -21,7 +21,7 @@
     "postcss": "^8.5.1",
     "react": "catalog:react19",
     "react-dom": "catalog:react19",
-    "tailwindcss": "^3.4.15",
+    "tailwindcss": "catalog:",
     "typescript": "catalog:"
   },
   "peerDependencies": {
