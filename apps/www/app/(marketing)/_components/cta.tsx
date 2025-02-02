@@ -14,7 +14,7 @@ export function Cta() {
       subtitle={siteConfig.cta.subtitle}
       className="bg-primary/10 py-16 xl:rounded-lg"
     >
-      <div className="flex items-center justify-center pt-4">
+      <div className="flex w-full items-center justify-center pt-4">
         <Link
           href={siteConfig.cta.href}
           target="_blank"

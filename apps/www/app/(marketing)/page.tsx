@@ -2,6 +2,9 @@
 import { Spacer } from "@galleo/ui/components/spacer";
 import { Cta } from "./_components/cta";
 import { FeatureSection } from "./_components/feature-section";
+import { AutomatedFilling } from "./_components/feature/automated-filling";
+import { Email } from "./_components/feature/email";
+import { Integrated } from "./_components/feature/integrated";
 import Footer from "./_components/footer";
 import { Hero } from "./_components/hero";
 import { Logos } from "./_components/logos";
@@ -9,17 +12,6 @@ import { Header } from "./_components/navigation/header";
 import { Section } from "./_components/section";
 
 export default function LandingPage() {
-  const showcaseContent = (
-    <div className="relative aspect-[4/3] w-full rounded-lg bg-white p-8 shadow-sm">
-      <div className="absolute inset-0 flex items-center justify-center font-medium text-2xl text-gray-900">
-        EDGAR
-      </div>
-      <div className="absolute bottom-8 left-8 font-medium text-lg text-muted-foreground">
-        EUR-Lex
-      </div>
-    </div>
-  );
-
   return (
     <div>
       <Header />
@@ -60,7 +52,7 @@ export default function LandingPage() {
           </div>
         }
         ctaText="Explore Knowledge"
-        showcaseContent={showcaseContent}
+        showcaseContent={<Email />}
       />
 
       <Spacer className="h-20 md:h-24" />
@@ -78,7 +70,7 @@ export default function LandingPage() {
           </div>
         }
         ctaText="See how fast we can work"
-        showcaseContent={showcaseContent}
+        showcaseContent={<AutomatedFilling />}
         position="left"
       />
 
@@ -110,7 +102,7 @@ export default function LandingPage() {
           </div>
         }
         ctaText="Learn more about integrations"
-        showcaseContent={showcaseContent}
+        showcaseContent={<Integrated />}
       />
 
       <Spacer className="h-20 md:h-24" />
