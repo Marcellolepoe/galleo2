@@ -1,8 +1,8 @@
 "use client";
 import { Spacer } from "@galleo/ui/components/spacer";
 import { Cta } from "./_components/cta";
-import { FeatureSection } from "./_components/feature-section";
 import { AutomatedFilling } from "./_components/feature/automated-filling";
+import { FeatureSection } from "./_components/feature/container";
 import { Email } from "./_components/feature/email";
 import { Integrated } from "./_components/feature/integrated";
 import Footer from "./_components/footer";
