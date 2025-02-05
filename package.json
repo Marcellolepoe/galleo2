@@ -10,7 +10,8 @@
     "db:studio": "bun run --filter @galleo/db studio",
     "env:set": "bun x dotenvx set",
     "env:get": "bun x dotenvx get",
-    "dev": "turbo run dev",
+    "dev:landing": "turbo run dev:landing",
+    "dev:ext": "turbo run dev:ext",
     "build": "turbo build",
     "changeset": "changeset",
     "changeset:release": "bun run build && changeset publish",
@@ -24,6 +25,7 @@
     "@biomejs/biome": "1.9.4",
     "@changesets/cli": "^2.27.12",
     "@dotenvx/dotenvx": "^1.25.1",
+    "@galleo/typescript": "workspace:*",
     "turbo": "2.3.3",
     "typescript": "catalog:"
   },

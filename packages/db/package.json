@@ -1,5 +1,6 @@
 {
   "name": "@galleo/db",
+  "license": "MIT",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -13,7 +14,6 @@
       "default": "./src/schema/*.ts"
     }
   },
-  "license": "MIT",
   "scripts": {
     "migrate-generate": "bun with-env drizzle-kit generate",
     "migrate-push": "bun with-env drizzle-kit migrate",

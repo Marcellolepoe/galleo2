@@ -1,0 +1,29 @@
+{
+  "name": "@galleo/ai-server",
+  "exports": {
+    ".": {
+      "default": "./src/routes/index.ts"
+    }
+  },
+  "scripts": {
+    "dev:ext": "bun x dotenvx decrypt -f ../../.env  --stdout > .dev.vars && wrangler dev --port 6922",
+    "deploy": "wrangler deploy --minify",
+    "with-env": "dotenvx run -f ../../.env --",
+    "auth": "bun with-env bun run auth-migrate",
+    "auth-migrate": "bun x @better-auth/cli@latest migrate --config auth.config.ts",
+    "clean": "git clean -xdf .wrangler node_modules .dev.vars"
+  },
+  "dependencies": {
+    "@galleo/db": "workspace:*",
+    "@hono/valibot-validator": "^0.5.2",
+    "hono": "^4.6.20",
+    "jose": "^5.2.0",
+    "valibot": "^1.0.0-beta.10"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250109.0",
+    "@galleo/typescript": "workspace:*",
+    "@types/node": "^22.13.1",
+    "wrangler": "^3.107.3"
+  }
+}

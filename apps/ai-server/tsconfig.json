@@ -1,0 +1,9 @@
+{
+  "extends": "@galleo/typescript/tsconfig.base.json",
+  "compilerOptions": {
+    "module": "ESNext",
+    "types": ["@cloudflare/workers-types/2023-07-01", "@types/node"],
+    "jsx": "react-jsx",
+    "jsxImportSource": "hono/jsx"
+  }
+}

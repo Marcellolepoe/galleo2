@@ -7,10 +7,13 @@ import {
 import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 import { routeTree } from "./routeTree.gen";
+import "./global.css";
 
 export function createRouter() {
   const memoryHistory = createMemoryHistory({
-    initialEntries: [window.location.pathname],
+    initialEntries: [
+      window.location.pathname + window.location.search + window.location.hash,
+    ],
   });
 
   const router = createTanStackRouter({

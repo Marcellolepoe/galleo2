@@ -63,6 +63,15 @@
   * {
     @apply border-border;
   }
+  #newWindowNotificaiton {
+    @apply !bg-background border !text-foreground;
+  }
+  #newWindowNotificaiton + div {
+    @apply blur-3xl !bg-background/80;
+  }
+  #newWindowNotificaiton input {
+    @apply !bg-background !text-foreground hover:!bg-muted transition-colors;
+  }
   body {
     @apply font-sans antialiased bg-background text-foreground;
   }

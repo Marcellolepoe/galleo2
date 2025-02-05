@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "bun with-env bun run dev:node",
+    "dev:landing": "bun with-env bun run dev:node",
     "dev:node": "next dev --port 6969",
     "dev:cloudflare": "bun x dotenvx decrypt -f ../../.env  --stdout > .dev.vars && wrangler dev --port 8771",
     "build": "pnpm with-env pnpm run build:node",

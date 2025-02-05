@@ -8,12 +8,12 @@
     <ProviderName>Galleo</ProviderName>
     <DefaultLocale>en-US</DefaultLocale>
     <DisplayName DefaultValue="Galleo Assist"/>
-    <Description DefaultValue="Trademark Galleo Assistant"/>
+    <Description DefaultValue="Galleo trademark assistant for outlook helps you automatically draft responses to client enquiries regarding trademarks."/>
     <IconUrl DefaultValue="https://localhost:3099/icon-64.png"/>
     <HighResolutionIconUrl DefaultValue="https://localhost:3099/icon-128.png"/>
     <SupportUrl DefaultValue="https://www.contoso.com/help"/>
     <AppDomains>
-        <AppDomain>https://www.contoso.com</AppDomain>
+        <AppDomain>https://localhost:3099</AppDomain>
     </AppDomains>
     <Hosts>
         <Host Name="Mailbox" />
@@ -26,14 +26,14 @@
     <FormSettings>
         <Form xsi:type="ItemRead">
             <DesktopSettings>
-                <SourceLocation DefaultValue="https://localhost:3099/taskpane"/>
+                <SourceLocation DefaultValue="https://localhost:3099"/>
                 <RequestedHeight>250</RequestedHeight>
             </DesktopSettings>
         </Form>
     </FormSettings>
     <Permissions>ReadWriteItem</Permissions>
     <Rule xsi:type="RuleCollection" Mode="Or">
-        <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read" />
+        <Rule xsi:type="ItemIs" ItemType="Message" FormType="ReadOrEdit" />
     </Rule>
     <DisableEntityHighlighting>false</DisableEntityHighlighting>
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -106,5 +106,6 @@
                 <bt:String id="ActionButton.Tooltip" DefaultValue="Perform an action when clicked."/>
             </bt:LongStrings>
         </Resources>
+
     </VersionOverrides>
 </OfficeApp>

@@ -20,6 +20,14 @@
       "persistent": false,
       "cache": false
     },
+    "dev:landing": {
+      "persistent": false,
+      "cache": false
+    },
+    "dev:ext": {
+      "persistent": false,
+      "cache": false
+    },
     "format": {
       "outputLogs": "new-only"
     },

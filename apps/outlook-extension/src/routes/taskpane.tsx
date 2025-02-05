@@ -1,5 +1,5 @@
 import { Button } from "@galleo/ui/components/button";
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 
 interface EmailDetails {
@@ -13,28 +13,6 @@ interface AsyncResult<T> {
   value: T;
   error?: Error;
 }
-
-const BUSINESS_WORDS = [
-  "synergistically",
-  "holistically",
-  "proactively",
-  "dynamically",
-  "strategically",
-  "innovatively",
-  "efficiently",
-  "collaboratively",
-  "transformatively",
-  "sustainably",
-  "seamlessly",
-  "intelligently",
-];
-
-const RESPONSE_TEMPLATES = [
-  "Thank you for your email regarding {subject}. {random}",
-  "I appreciate you reaching out about {subject}. {random}",
-  "Thanks for bringing this to my attention. {random}",
-  "I've reviewed your message about {subject}. {random}",
-];
 
 const getEmailSubject = (item: Office.MessageRead): string => {
   return item.subject;
@@ -76,6 +54,11 @@ const loadEmailDetails = async (
 };
 
 export const Route = createFileRoute("/taskpane")({
+  beforeLoad: () => {
+    return redirect({
+      to: "/login",
+    });
+  },
   component: TaskPane,
 });
 
@@ -133,42 +116,45 @@ function TaskPane() {
     });
   }, []);
 
-  const getRandomWords = (count = 3): string => {
-    const words: string[] = [];
-    for (let i = 0; i < count; i++) {
-      const randomIndex = Math.floor(Math.random() * BUSINESS_WORDS.length);
-      words.push(BUSINESS_WORDS[randomIndex] ?? "");
-    }
-    return words.join(" ");
-  };
-
-  const getRandomTemplate = (): string => {
-    const randomIndex = Math.floor(Math.random() * RESPONSE_TEMPLATES.length);
-    return RESPONSE_TEMPLATES[randomIndex] ?? "";
-  };
-
   const generateResponse = async () => {
     if (!emailDetails) return;
 
     setIsGenerating(true);
     try {
-      const template = getRandomTemplate();
-      const randomWords = getRandomWords(3);
-      const response = template
-        .replace("{subject}", emailDetails.subject)
-        .replace("{random}", `We will ${randomWords} address this matter.`);
+      // const template = getRandomTemplate();
+      // const randomWords = getRandomWords(3);
+      // const response = template
+      //   .replace("{subject}", emailDetails.subject)
+      //   .replace("{random}", `We will ${randomWords} address this matter.`);
 
-      // Create a reply
-      await new Promise<void>((resolve, reject) => {
-        try {
-          if (Office.context.mailbox.item) {
-            Office.context.mailbox.item.displayReplyAllForm(response);
-          }
-          resolve();
-        } catch (error) {
-          reject(error);
-        }
+      // // Create a reply
+      // await new Promise<void>((resolve, reject) => {
+      //   try {
+      //     if (Office.context.mailbox.item) {
+      //       Office.context.mailbox.item.displayReplyAllForm(response);
+      //     }
+      //     resolve();
+      //   } catch (error) {
+      //     reject(error);
+      //   }
+      // });
+      console.log("https://localhost:3099/taskpane");
+      const url = new URL("/taskpane", window.location.origin);
+      console.log("url", url);
+
+      await document.requestStorageAccess();
+      document.hasStorageAccess().then((hasAccess) => {
+        console.log("hasAccess", hasAccess);
       });
+      await Office.context.ui.displayDialogAsync(
+        "https://localhost:3099/taskpane",
+        {
+          displayInIframe: true,
+        },
+        (result) => {
+          console.log(result);
+        },
+      );
     } catch (error) {
       console.error("Error generating response:", error);
     } finally {
@@ -198,7 +184,7 @@ function TaskPane() {
               <div className="space-y-2">
                 <p className="text-slate-600 text-sm dark:text-slate-300">
                   <span className="font-medium text-slate-900 dark:text-white">
-                    From:{" "}
+                    Most recent sender:{" "}
                   </span>
                   {emailDetails.sender}
                 </p>

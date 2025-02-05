@@ -1,20 +1,18 @@
-import { Link, Outlet, createRootRoute } from "@tanstack/react-router";
+import { Toaster } from "@galleo/ui/components/sonner";
+import { ThemeToggle } from "@galleo/ui/components/theme-toggle";
+import { ThemeProvider } from "@galleo/ui/theme-provider";
+import { Outlet, createRootRoute } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/router-devtools";
 
 export const Route = createRootRoute({
   component: () => (
-    <>
-      <div className="flex gap-2 p-2">
-        <Link to="/" className="[&.active]:font-bold">
-          Home
-        </Link>{" "}
-        <Link to="/about" className="[&.active]:font-bold">
-          About
-        </Link>
+    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+      <div className="relative flex min-h-screen flex-col">
+        <Outlet />
+        <TanStackRouterDevtools />
+        <ThemeToggle className="absolute right-2 bottom-2" />
       </div>
-      <hr />
-      <Outlet />
-      <TanStackRouterDevtools />
-    </>
+      <Toaster />
+    </ThemeProvider>
   ),
 });

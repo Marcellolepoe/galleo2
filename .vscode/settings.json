@@ -6,5 +6,13 @@
     "**/routeTree.gen.ts": true
   },
 
-  "cSpell.words": ["addin", "Creds", "Galleo", "millis", "totp", "turso"]
+  "cSpell.words": [
+    "addin",
+    "Creds",
+    "Entra",
+    "Galleo",
+    "millis",
+    "totp",
+    "turso"
+  ]
 }
