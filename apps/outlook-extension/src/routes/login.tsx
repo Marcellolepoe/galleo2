@@ -1,6 +1,7 @@
 import { Button } from "@galleo/ui/components/button";
 import { toast } from "@galleo/ui/components/sonner";
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { useState } from "react";
 
 export const Route = createFileRoute("/login")({
   component: RouteComponent,
@@ -8,8 +9,12 @@ export const Route = createFileRoute("/login")({
 
 function RouteComponent() {
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleLogin = async () => {
+    // ensure that we can store cookies in the iframe.
+    await document.requestStorageAccess();
+
     // Open the login popup
     Office.context.ui.displayDialogAsync(
       `${window.location.origin}/login/popup`,
@@ -34,7 +39,7 @@ function RouteComponent() {
         const dialog = result.value;
         dialog.addEventHandler(
           Office.EventType.DialogMessageReceived,
-          (arg) => {
+          async (arg) => {
             dialog.close();
             // Check if the message property exists and matches our expected value
             if ("message" in arg) {
@@ -43,7 +48,9 @@ function RouteComponent() {
                 | { success: true; message: string } = JSON.parse(arg.message);
 
               if (result.success) {
-                return navigate({ to: "/taskpane" });
+                setIsLoading(true);
+                toast.success("Login successful. Redirecting...");
+                return await navigate({ to: "/draft-response" });
               }
 
               return toast.error(`${result.message}: ${result.error}`);
@@ -67,7 +74,7 @@ function RouteComponent() {
           You are currently not logged in. To access all features and get
           started, please click the login button below.
         </p>
-        <Button type="button" onClick={handleLogin}>
+        <Button type="button" onClick={handleLogin} isLoading={isLoading}>
           Login to Get Started
         </Button>
       </div>

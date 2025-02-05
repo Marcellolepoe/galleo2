@@ -11,8 +11,8 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
-import { Route as TaskpaneImport } from './routes/taskpane'
 import { Route as LoginImport } from './routes/login'
+import { Route as DraftResponseImport } from './routes/draft-response'
 import { Route as CommandsImport } from './routes/commands'
 import { Route as AboutImport } from './routes/about'
 import { Route as IndexImport } from './routes/index'
@@ -20,15 +20,15 @@ import { Route as LoginPopupImport } from './routes/login_.popup'
 
 // Create/Update Routes
 
-const TaskpaneRoute = TaskpaneImport.update({
-  id: '/taskpane',
-  path: '/taskpane',
-  getParentRoute: () => rootRoute,
-} as any)
-
 const LoginRoute = LoginImport.update({
   id: '/login',
   path: '/login',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const DraftResponseRoute = DraftResponseImport.update({
+  id: '/draft-response',
+  path: '/draft-response',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -81,18 +81,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CommandsImport
       parentRoute: typeof rootRoute
     }
+    '/draft-response': {
+      id: '/draft-response'
+      path: '/draft-response'
+      fullPath: '/draft-response'
+      preLoaderRoute: typeof DraftResponseImport
+      parentRoute: typeof rootRoute
+    }
     '/login': {
       id: '/login'
       path: '/login'
       fullPath: '/login'
       preLoaderRoute: typeof LoginImport
-      parentRoute: typeof rootRoute
-    }
-    '/taskpane': {
-      id: '/taskpane'
-      path: '/taskpane'
-      fullPath: '/taskpane'
-      preLoaderRoute: typeof TaskpaneImport
       parentRoute: typeof rootRoute
     }
     '/login_/popup': {
@@ -111,8 +111,8 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/commands': typeof CommandsRoute
+  '/draft-response': typeof DraftResponseRoute
   '/login': typeof LoginRoute
-  '/taskpane': typeof TaskpaneRoute
   '/login/popup': typeof LoginPopupRoute
 }
 
@@ -120,8 +120,8 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/commands': typeof CommandsRoute
+  '/draft-response': typeof DraftResponseRoute
   '/login': typeof LoginRoute
-  '/taskpane': typeof TaskpaneRoute
   '/login/popup': typeof LoginPopupRoute
 }
 
@@ -130,8 +130,8 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/commands': typeof CommandsRoute
+  '/draft-response': typeof DraftResponseRoute
   '/login': typeof LoginRoute
-  '/taskpane': typeof TaskpaneRoute
   '/login_/popup': typeof LoginPopupRoute
 }
 
@@ -141,18 +141,24 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/commands'
+    | '/draft-response'
     | '/login'
-    | '/taskpane'
     | '/login/popup'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/commands' | '/login' | '/taskpane' | '/login/popup'
+  to:
+    | '/'
+    | '/about'
+    | '/commands'
+    | '/draft-response'
+    | '/login'
+    | '/login/popup'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/commands'
+    | '/draft-response'
     | '/login'
-    | '/taskpane'
     | '/login_/popup'
   fileRoutesById: FileRoutesById
 }
@@ -161,8 +167,8 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   CommandsRoute: typeof CommandsRoute
+  DraftResponseRoute: typeof DraftResponseRoute
   LoginRoute: typeof LoginRoute
-  TaskpaneRoute: typeof TaskpaneRoute
   LoginPopupRoute: typeof LoginPopupRoute
 }
 
@@ -170,8 +176,8 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   CommandsRoute: CommandsRoute,
+  DraftResponseRoute: DraftResponseRoute,
   LoginRoute: LoginRoute,
-  TaskpaneRoute: TaskpaneRoute,
   LoginPopupRoute: LoginPopupRoute,
 }
 
@@ -188,8 +194,8 @@ export const routeTree = rootRoute
         "/",
         "/about",
         "/commands",
+        "/draft-response",
         "/login",
-        "/taskpane",
         "/login_/popup"
       ]
     },
@@ -202,11 +208,11 @@ export const routeTree = rootRoute
     "/commands": {
       "filePath": "commands.tsx"
     },
+    "/draft-response": {
+      "filePath": "draft-response.tsx"
+    },
     "/login": {
       "filePath": "login.tsx"
-    },
-    "/taskpane": {
-      "filePath": "taskpane.tsx"
     },
     "/login_/popup": {
       "filePath": "login_.popup.tsx"

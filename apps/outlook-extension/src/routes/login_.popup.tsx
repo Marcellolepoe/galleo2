@@ -1,6 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Button } from "@galleo/ui/components/button";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 import { useEffect } from "react";
-import { aiServer } from "~/lib/ai-server";
+import { aiServer, getSession } from "~/lib/ai-server";
 
 export const Route = createFileRoute("/login_/popup")({
   validateSearch: (
@@ -74,26 +75,36 @@ function LoginPopup() {
     };
 
     const handleContinueLogin = async () => {
-      const session = await aiServer.session.$get();
-      const result = await session.json();
-      console.log("result", result);
+      const session = await getSession();
+      if (!session) {
+        return redirect({
+          to: "/login/popup",
+          search: {
+            type: "error",
+            error: "invalid_session",
+            errorDescription: "Invalid or expired session.",
+          },
+        });
+      }
 
-      // Office.context.ui.messageParent(
-      //   JSON.stringify({
-      //     success: true,
-      //     message: "Login successful",
-      //   }),
-      //   {
-      //     targetOrigin: window.location.origin,
-      //   },
-      // );
+      return Office.context.ui.messageParent(
+        JSON.stringify({
+          success: true,
+          message: "Login successful",
+        }),
+        {
+          targetOrigin: window.location.origin,
+        },
+      );
     };
 
     if (type === "start") {
       return void handleStartLogin();
     }
 
-    return void handleContinueLogin();
+    if (type === "continue") {
+      return void handleContinueLogin();
+    }
   }, [type]);
 
   let body = <p className="text-2xl">Logging you in...</p>;
@@ -106,6 +117,21 @@ function LoginPopup() {
             {errorDescription}
           </p>
         )}
+        <Button
+          type="button"
+          onClick={() =>
+            redirect({
+              to: "/login/popup",
+              search: {
+                type: "start",
+                error: null,
+                errorDescription: null,
+              },
+            })
+          }
+        >
+          Try again
+        </Button>
       </div>
     );
   }
