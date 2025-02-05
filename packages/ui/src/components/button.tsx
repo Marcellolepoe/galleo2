@@ -51,15 +51,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         {...props}
         disabled={isLoading || props.disabled}
       >
-        {isLoading ? (
-          <>
-            <Icons.spinner
-              className="h-4 w-4 animate-spin"
-              aria-hidden="true"
-            />
-            <span className="sr-only">loading </span>
-          </>
-        ) : null}
+        {isLoading ? <Icons.spinner /> : null}
         {props.children}
       </Comp>
     );

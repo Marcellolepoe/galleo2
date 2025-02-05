@@ -12,7 +12,7 @@ export const Route = createRootRoute({
         <TanStackRouterDevtools />
         <ThemeToggle className="absolute right-2 bottom-2" />
       </div>
-      <Toaster />
+      <Toaster closeButton />
     </ThemeProvider>
   ),
 });

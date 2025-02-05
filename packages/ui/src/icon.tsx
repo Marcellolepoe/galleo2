@@ -10,6 +10,7 @@ import {
   XIcon,
 } from "lucide-react";
 import { BrandLogo } from "./components/brand-logo";
+import { cn } from "./utils/cn";
 
 export type IconProps = React.HTMLAttributes<SVGElement>;
 
@@ -22,6 +23,15 @@ export const Icons = {
   sun: SunIcon,
   eyeOn: EyeIcon,
   eyeOff: EyeOffIcon,
-  spinner: Loader2,
+  spinner: (props: IconProps) => (
+    <>
+      <Loader2
+        {...props}
+        className={cn("h-4 w-4 animate-spin", props.className)}
+        aria-hidden="true"
+      />
+      <span className="sr-only">loading </span>
+    </>
+  ),
   chevronRight: ChevronRightIcon,
 };

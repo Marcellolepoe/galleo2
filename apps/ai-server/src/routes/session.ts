@@ -12,7 +12,7 @@ export const sessionRouter = new Hono()
       return c.json(
         {
           error: "unauthorized",
-          error_description: "No session token found",
+          error_description: "No session token found.",
         },
         401,
       );
@@ -27,7 +27,7 @@ export const sessionRouter = new Hono()
       return c.json(
         {
           error: "internal_server_error",
-          error_description: "Failed to validate session",
+          error_description: "Failed to validate session.",
         },
         500,
       );
@@ -38,7 +38,7 @@ export const sessionRouter = new Hono()
       return c.json(
         {
           error: "unauthorized",
-          error_description: "Invalid or expired session",
+          error_description: "Invalid or expired session.",
         },
         401,
       );
@@ -48,6 +48,11 @@ export const sessionRouter = new Hono()
       id: session.user.id,
       name: session.user.name,
       image: session.user.image,
-      accounts: session.user.accounts,
+      accounts: session.user.accounts.map((account) => {
+        return {
+          ...account,
+          providerInfo: undefined,
+        };
+      }),
     });
   });

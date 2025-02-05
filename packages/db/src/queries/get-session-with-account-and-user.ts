@@ -27,6 +27,5 @@ export async function getSessionWithAccountAndUser({
   if (!result.success) {
     return result;
   }
-  // todo: map the account and user to the correct type
   return ok(result.data ?? null);
 }

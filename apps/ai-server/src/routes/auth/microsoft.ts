@@ -148,7 +148,6 @@ export const microsoftEntraIdRouter = ({
         });
       },
       onLoginSuccess: async ({ tokens, userProfile }) => {
-        console.log("userProfile", userProfile);
         if (!userProfile) {
           throw new Error("Missing user profile. Please try again.");
         }
