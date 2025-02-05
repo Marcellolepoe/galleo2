@@ -8,7 +8,7 @@ export const OAUTH_COOKIE_VERIFIER_NAME = "oauth_verifier";
 export const OAUTH_COOKIE_REDIRECT_NAME = "oauth_redirect";
 export const OAUTH_COOKIE_SESSION_NAME = "oauth_session";
 
-export const TOKEN_STORAGE: TokenStorage = "header";
+export const TOKEN_STORAGE: TokenStorage = "cookie";
 
 export const SESSION_COOKIE_SETTINGS = (
   name: string,

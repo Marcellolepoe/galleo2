@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@galleo/db": "workspace:*",
+    "@galleo/result": "workspace:*",
     "@hono/valibot-validator": "^0.5.2",
     "hono": "^4.6.20",
     "jose": "^5.2.0",

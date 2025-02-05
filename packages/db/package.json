@@ -6,17 +6,26 @@
   "type": "module",
   "exports": {
     ".": {
-      "types": "./dist/client.d.ts",
+      "types": "./dist/src/client.d.ts",
       "default": "./src/client.ts"
     },
     "./schema/*": {
-      "types": "./dist/schema/*.d.ts",
+      "types": "./dist/src/schema/*.d.ts",
       "default": "./src/schema/*.ts"
+    },
+    "./queries/*": {
+      "types": "./dist/src/queries/*.d.ts",
+      "default": "./src/queries/*.ts"
+    },
+    "./mutations/*": {
+      "types": "./dist/src/mutations/*.d.ts",
+      "default": "./src/mutations/*.ts"
     }
   },
   "scripts": {
     "migrate-generate": "bun with-env drizzle-kit generate",
     "migrate-push": "bun with-env drizzle-kit migrate",
+    "pull": "bun with-env drizzle-kit pull",
     "push": "bun with-env drizzle-kit push",
     "studio": "bun with-env drizzle-kit studio",
     "build": "tsc",
@@ -28,15 +37,14 @@
     "with-env": "dotenvx run -f ../../.env -- "
   },
   "dependencies": {
-    "better-sqlite3": "^11.8.1",
+    "@galleo/result": "workspace:*",
+    "@libsql/client": "^0.14.0",
     "drizzle-orm": "^0.39.1"
   },
   "devDependencies": {
     "@galleo/typescript": "workspace:*",
+    "@types/node": "catalog:",
     "drizzle-kit": "^0.30.4",
     "typescript": "catalog:"
-  },
-  "overrides": {
-    "drizzle-orm": "^0.38.3"
   }
 }

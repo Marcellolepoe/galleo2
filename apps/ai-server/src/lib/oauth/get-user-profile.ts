@@ -1,5 +1,5 @@
+import { type Result, ok, safe, safeFetch } from "@galleo/result";
 import { decodeJwt } from "jose";
-import { type Result, ok, safe, safeFetch } from "../result";
 import type { OAuth2Tokens } from "./type";
 
 // biome-ignore lint/suspicious/noExplicitAny: This is okay because we are letting the end user define the type

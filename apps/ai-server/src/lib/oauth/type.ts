@@ -8,11 +8,11 @@ export interface OAuthProviderConfig {
 export interface OAuth2Tokens {
   tokenType: string;
   accessToken: string;
-  accessTokenExpiresAt: Date | null;
   refreshToken: string | null;
+  accessTokenExpiresAt: Date | null;
   refreshTokenExpiresAt: Date | null;
-  scopes: string[];
   idToken: string | null;
+  scope: string[];
 }
 
 export type TokenStorage = "cookie" | "header";

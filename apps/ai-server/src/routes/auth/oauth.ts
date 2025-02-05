@@ -1,3 +1,4 @@
+import { safe } from "@galleo/result";
 import { type Context, Hono } from "hono";
 import { validator } from "hono/validator";
 import { generateCodeVerifier, generateState } from "../../lib/crypto/oauth";
@@ -19,7 +20,6 @@ import {
   SESSION_COOKIE_SETTINGS,
 } from "../../lib/oauth/constant";
 import type { OAuth2Tokens, TokenStorage } from "../../lib/oauth/type";
-import { safe } from "../../lib/result";
 
 function handleRedirect({
   ctx,

@@ -1,4 +1,6 @@
+import type { Db } from "@galleo/db";
 import { env } from "hono/adapter";
+import { getConnInfo as getHonoConnInfo } from "hono/cloudflare-workers";
 import { getContext } from "hono/context-storage";
 import {
   getCookie as getHonoCookie,
@@ -13,6 +15,25 @@ export function getEnv() {
   const envMap = env(ctx);
   const envValidated = parseEnv(envMap);
   return envValidated;
+}
+
+export function getConnInfo() {
+  const ctx = getContext();
+  return getHonoConnInfo(ctx).remote.address ?? null;
+}
+
+export function getHeaders() {
+  const ctx = getContext();
+  return ctx.req.raw.headers;
+}
+
+export function getDb() {
+  const ctx = getContext<{
+    Variables: {
+      db: Db;
+    };
+  }>();
+  return ctx.var.db;
 }
 
 export function setCookie(args: CookieSerializeOptions) {

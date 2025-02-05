@@ -1,3 +1,4 @@
+import { type Db, createDb } from "@galleo/db";
 import { Hono } from "hono";
 import { contextStorage } from "hono/context-storage";
 import { cors } from "hono/cors";
@@ -20,12 +21,21 @@ interface Session {
 
 const app = new Hono<{
   Variables: {
-    user: User | null;
-    session: Session | null;
+    db: Db;
   };
   Bindings: EnvSchema;
 }>()
   .use(contextStorage())
+  .use(async (c, next) => {
+    c.set(
+      "db",
+      createDb({
+        tursoDbUrl: c.env.TURSO_DATABASE_URL,
+        tursoDbAuthToken: c.env.TURSO_AUTH_TOKEN,
+      }),
+    );
+    await next();
+  })
   .use(
     cors({
       origin: (origin) => {

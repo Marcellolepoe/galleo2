@@ -1,4 +1,4 @@
-import { type Result, err, ok, safe, safeFetch } from "../result";
+import { type Result, err, ok, safe, safeFetch } from "@galleo/result";
 import type { OAuth2Tokens } from "./type";
 
 function getOAuth2Tokens(data: Record<string, unknown>): Result<OAuth2Tokens> {
@@ -24,7 +24,7 @@ function getOAuth2Tokens(data: Record<string, unknown>): Result<OAuth2Tokens> {
       typeof data.refresh_token === "string" ? data.refresh_token : null,
     refreshTokenExpiresAt: null,
     accessTokenExpiresAt,
-    scopes: typeof data.scope === "string" ? data.scope.split(" ") : [],
+    scope: typeof data.scope === "string" ? data.scope.split(" ") : [],
     idToken: typeof data.id_token === "string" ? data.id_token : null,
   });
 }

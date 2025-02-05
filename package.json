@@ -10,6 +10,7 @@
     "db:studio": "bun run --filter @galleo/db studio",
     "env:set": "bun x dotenvx set",
     "env:get": "bun x dotenvx get",
+    "dev": "turbo run dev",
     "dev:landing": "turbo run dev:landing",
     "dev:ext": "turbo run dev:ext",
     "build": "turbo build",
