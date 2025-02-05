@@ -9,7 +9,7 @@ export async function setUpSession({ db, userId }: { db: Db; userId: string }) {
     newSession: {
       id: generateRandomId(),
       userId,
-      expiresAt: new Date(Date.now() + 1000 * 60 * 60 * 24 * 30),
+      expiresAt: new Date(Date.now() + 1000 * 60 * 60 * 24 * 30), // 30 days
       token: generateRandomId(),
       ipAddress: getConnInfo(),
       userAgent: getHeaders().get("user-agent"),

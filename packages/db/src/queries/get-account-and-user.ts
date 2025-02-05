@@ -26,7 +26,7 @@ export async function getAccountWithUser({
     return ok(null);
   }
 
-  if (result.data.user) {
+  if (!result.data.user) {
     return err(
       new Error(`DB: Missing user for given account_id ${result.data.id}`),
     );

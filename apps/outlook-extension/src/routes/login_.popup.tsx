@@ -74,7 +74,10 @@ function LoginPopup() {
     };
 
     const handleContinueLogin = async () => {
-      await new Promise((resolve) => setTimeout(resolve, 600));
+      const session = await aiServer.session.$get();
+      const result = await session.json();
+      console.log("result", result);
+
       // Office.context.ui.messageParent(
       //   JSON.stringify({
       //     success: true,
@@ -97,7 +100,7 @@ function LoginPopup() {
   if (type === "error") {
     body = (
       <div className="space-y-2">
-        <p className="text-2xl">Login failed</p>
+        <p className="text-2xl">Login failed.</p>
         {errorDescription && (
           <p className="max-w-md overflow-x-auto text-muted-foreground text-sm">
             {errorDescription}

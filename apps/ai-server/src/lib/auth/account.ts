@@ -1,6 +1,6 @@
 import type { Db } from "@galleo/db";
 import { insertUserAndAccount } from "@galleo/db/mutations/insert-user-and-account";
-import { getAccountWithUser } from "@galleo/db/queries/get-account-with-user";
+import { getAccountWithUser } from "@galleo/db/queries/get-account-and-user";
 import type {
   AccountProviderInfoOauth,
   SelectAccountWithUser,

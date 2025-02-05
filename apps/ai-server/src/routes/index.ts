@@ -5,6 +5,7 @@ import { cors } from "hono/cors";
 import type { EnvSchema } from "../lib/env";
 import { getEnv } from "../lib/hono";
 import { authRouter } from "./auth";
+import { sessionRouter } from "./session";
 
 interface User {
   id: string;
@@ -52,7 +53,8 @@ const app = new Hono<{
       credentials: true,
     }),
   )
-  .route("/", authRouter);
+  .route("/", authRouter)
+  .route("/", sessionRouter);
 
 export default app;
 export type AiServerType = typeof app;
