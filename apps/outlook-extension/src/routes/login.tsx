@@ -1,5 +1,5 @@
-import { Button } from "@galleo/ui/components/button";
-import { toast } from "@galleo/ui/components/sonner";
+import { Button } from "@galleo/ui/components/base/button";
+import { toast } from "@galleo/ui/components/base/sonner";
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
 

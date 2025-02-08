@@ -1,4 +1,4 @@
-import { buttonVariants } from "@galleo/ui/components/button";
+import { buttonVariants } from "@galleo/ui/components/base/button";
 import { cn } from "@galleo/ui/utils/cn";
 import Link from "next/link";
 import { siteConfig } from "~/lib/site-config";

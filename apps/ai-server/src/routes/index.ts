@@ -5,20 +5,8 @@ import { cors } from "hono/cors";
 import type { EnvSchema } from "../lib/env";
 import { getEnv } from "../lib/hono";
 import { authRouter } from "./auth";
+import { chatRouter } from "./chat";
 import { sessionRouter } from "./session";
-
-interface User {
-  id: string;
-  email: string;
-  name: string;
-  image?: string;
-}
-
-interface Session {
-  id: string;
-  userId: string;
-  expiresAt: Date;
-}
 
 const app = new Hono<{
   Variables: {
@@ -54,7 +42,8 @@ const app = new Hono<{
     }),
   )
   .route("/", authRouter)
-  .route("/", sessionRouter);
+  .route("/", sessionRouter)
+  .route("/api/chat", chatRouter);
 
 export default app;
 export type AiServerType = typeof app;

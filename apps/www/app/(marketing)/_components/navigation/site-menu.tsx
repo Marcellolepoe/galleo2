@@ -1,6 +1,6 @@
 "use client";
 
-import { buttonVariants } from "@galleo/ui/components/button";
+import { buttonVariants } from "@galleo/ui/components/base/button";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -9,8 +9,8 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@galleo/ui/components/navigation-menu";
-import { ThemeToggle } from "@galleo/ui/components/theme-toggle";
+} from "@galleo/ui/components/base/navigation-menu";
+import { ThemeToggle } from "@galleo/ui/components/base/theme-toggle";
 import { cn } from "@galleo/ui/utils/cn";
 import Link from "next/link";
 import {

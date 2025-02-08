@@ -1,5 +1,5 @@
 "use client";
-import { Spacer } from "@galleo/ui/components/spacer";
+import { Spacer } from "@galleo/ui/components/base/spacer";
 import { Section } from "../section";
 import { HeroCTA } from "./cta";
 import { HeroShowcase } from "./showcase";

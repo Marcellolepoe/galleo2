@@ -1,5 +1,5 @@
 "use client";
-import { Spacer } from "@galleo/ui/components/spacer";
+import { Spacer } from "@galleo/ui/components/base/spacer";
 import { Cta } from "./_components/cta";
 import { AutomatedFilling } from "./_components/feature/automated-filling";
 import { FeatureSection } from "./_components/feature/container";
@@ -63,7 +63,7 @@ export default function LandingPage() {
         description={
           <div className="space-y-4">
             <p>Frees up time for high-value legal work</p>
-            <ul className="ml-4 list-disc space-y-1 text-muted-foreground/80">
+            <ul className="ml-4 list-disc space-y-1 text-muted-foreground/80 ">
               <li>AI pre-fills all required TM filing forms</li>
               <li>Reduces human errors & eliminates repetitive data entry</li>
             </ul>

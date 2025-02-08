@@ -17,7 +17,6 @@
     "lint": "bun x @biomejs/biome lint . --write",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
-  "dependencies": {},
   "devDependencies": {
     "@galleo/typescript": "workspace:*",
     "typescript": "catalog:"

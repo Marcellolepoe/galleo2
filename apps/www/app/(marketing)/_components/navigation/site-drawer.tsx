@@ -1,4 +1,4 @@
-import { Button } from "@galleo/ui/components/button";
+import { Button } from "@galleo/ui/components/base/button";
 import {
   Drawer,
   DrawerContent,
@@ -7,8 +7,8 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "@galleo/ui/components/drawer";
-import { ThemeToggle } from "@galleo/ui/components/theme-toggle";
+} from "@galleo/ui/components/base/drawer";
+import { ThemeToggle } from "@galleo/ui/components/base/theme-toggle";
 import { Icons } from "@galleo/ui/icon";
 import { useRouter } from "next/navigation";
 import { useState } from "react";

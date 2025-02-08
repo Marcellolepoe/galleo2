@@ -1,4 +1,4 @@
-import { buttonVariants } from "@galleo/ui/components/button";
+import { buttonVariants } from "@galleo/ui/components/base/button";
 import { cn } from "@galleo/ui/utils/cn";
 import { motion } from "framer-motion";
 import Link from "next/link";

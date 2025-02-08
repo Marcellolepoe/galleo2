@@ -1,15 +1,22 @@
 import {
+  Bot,
   ChevronRightIcon,
+  Edit,
   EyeIcon,
   EyeOffIcon,
   Loader2,
   MenuIcon,
   MoonIcon,
   PlayIcon,
+  RefreshCw,
+  SquareIcon,
   SunIcon,
+  ThumbsDown,
+  ThumbsUp,
+  Trash,
   XIcon,
 } from "lucide-react";
-import { BrandLogo } from "./components/brand-logo";
+import { BrandLogo } from "./components/base/brand-logo";
 import { cn } from "./utils/cn";
 
 export type IconProps = React.HTMLAttributes<SVGElement>;
@@ -18,6 +25,7 @@ export const Icons = {
   logo: (props: IconProps) => <BrandLogo {...props} />,
   play: PlayIcon,
   x: XIcon,
+  stop: SquareIcon,
   menu: MenuIcon,
   moon: MoonIcon,
   sun: SunIcon,
@@ -34,4 +42,10 @@ export const Icons = {
     </>
   ),
   chevronRight: ChevronRightIcon,
-};
+  bot: Bot,
+  edit: Edit,
+  refresh: RefreshCw,
+  thumbsDown: ThumbsDown,
+  thumbsUp: ThumbsUp,
+  trash: Trash,
+} as const;

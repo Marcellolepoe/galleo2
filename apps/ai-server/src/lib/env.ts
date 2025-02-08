@@ -8,6 +8,9 @@ const EnvSchema = v.object({
   TURSO_DATABASE_URL: v.string(),
   TURSO_AUTH_TOKEN: v.string(),
   ENCRYPTION_KEY: v.string(),
+  OPENAI_API_KEY: v.pipe(v.string(), v.minLength(1)),
+  TAVILY_API_KEY: v.pipe(v.string(), v.minLength(1)),
+  GOOGLE_GEMINI_API_KEY: v.pipe(v.string(), v.minLength(1)),
 });
 export type EnvSchema = v.InferOutput<typeof EnvSchema>;
 export function parseEnv(env: Record<string, unknown> & object) {

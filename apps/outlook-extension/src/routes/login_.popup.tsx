@@ -1,4 +1,4 @@
-import { Button } from "@galleo/ui/components/button";
+import { Button } from "@galleo/ui/components/base/button";
 import { createFileRoute, redirect } from "@tanstack/react-router";
 import { useEffect } from "react";
 import { aiServer, getSession } from "~/lib/ai-server";

@@ -1,4 +1,4 @@
-import type { ButtonProps } from "@galleo/ui/components/button";
+import type { ButtonProps } from "@galleo/ui/components/base/button";
 import { type IconProps, Icons } from "@galleo/ui/icon";
 import { ROUTE_CONTACT_US } from "./routes";
 

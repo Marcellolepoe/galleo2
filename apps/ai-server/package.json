@@ -14,11 +14,17 @@
     "clean": "git clean -xdf .wrangler node_modules .dev.vars"
   },
   "dependencies": {
+    "@ai-sdk/google": "^1.1.10",
+    "@ai-sdk/openai": "^1.1.9",
     "@galleo/db": "workspace:*",
     "@galleo/result": "workspace:*",
     "@hono/valibot-validator": "^0.5.2",
+    "@tavily/core": "^0.0.3",
+    "@valibot/to-json-schema": "1.0.0-beta.5",
+    "ai": "^4.1.21",
     "hono": "^4.6.20",
     "jose": "^5.2.0",
+    "openai": "^4.83.0",
     "valibot": "^1.0.0-beta.10"
   },
   "devDependencies": {

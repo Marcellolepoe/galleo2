@@ -1,4 +1,4 @@
-import { Marquee } from "@galleo/ui/components/marquee";
+import { Marquee } from "@galleo/ui/components/base/marquee";
 import Image from "next/image";
 import { siteConfig } from "~/lib/site-config";
 

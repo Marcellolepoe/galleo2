@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatedList } from "@galleo/ui/components/animated-list";
+import { AnimatedList } from "@galleo/ui/components/base/animated-list";
 import { cn } from "@galleo/ui/utils/cn";
 
 interface Item {

@@ -102,7 +102,7 @@
             <bt:Urls>
                 <bt:Url id="Commands.Url" DefaultValue="https://localhost:3099/commands" />
                 <bt:Url id="CreateDraft.Url" DefaultValue="https://localhost:3099/draft-response" />
-                <bt:Url id="EditDraft.Url" DefaultValue="https://localhost:3099/draft-response/edit" />
+                <bt:Url id="EditDraft.Url" DefaultValue="https://localhost:3099/draft-response" />
             </bt:Urls>
             <bt:ShortStrings>
                 <bt:String id="GroupLabel" DefaultValue="Galleo AI"/>

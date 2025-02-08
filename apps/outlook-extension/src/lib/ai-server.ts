@@ -15,3 +15,8 @@ export const getSession = async () => {
   const result = await sessionResp.json();
   return result;
 };
+
+export interface UserSession {
+  name: string;
+  image: string | null;
+}
