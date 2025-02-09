@@ -25,11 +25,11 @@ export default function LandingPage() {
         <Logos />
         <Spacer className="h-8 md:h-10" />
         <div className="text-center text-muted-foreground">
-          <p>Trained by IP Law Experts - anticipates unique TM challenges</p>
+          <p>Trained by IP Law Experts - Anticipates Unique TM Challenges</p>
           <p>
-            Faster & More Efficient - No more manual drafting or form-filling
+            Faster & More Efficient - No More Manual Drafting or Form-filling
           </p>
-          <p>Increased Accuracy - AI analyzes every case instantly</p>
+          <p>Increased Accuracy - AI Analyzes Every Case Instantly</p>
         </div>
       </Section>
 
@@ -40,13 +40,13 @@ export default function LandingPage() {
         title="Instant First-Cut Advise"
         description={
           <div className="space-y-4">
-            <p>Lawyers simply review & send—saving hours per case.</p>
+            <p>Lawyers Simply Review & Send—Saving Hours on Pre-filing TM Analysis .</p>
             <div className="space-y-2">
-              <p>AI instantly drafts a first-cut legal review with:</p>
+              <p>AI Instantly Drafts A First-cut Review With:</p>
               <ul className="ml-4 list-disc space-y-1 text-muted-foreground/80">
-                <li>Classes & marks to file</li>
-                <li>IPOS search results</li>
-                <li>Legal rationale & recommendations</li>
+                <li>Preliminary Trademark Assessment</li>
+                <li>Comprehensive Class & Filing Recommendations</li>
+                <li>Actionable Next Steps and Cost Estimates</li>
               </ul>
             </div>
           </div>
@@ -62,10 +62,10 @@ export default function LandingPage() {
         title="Automated Filing"
         description={
           <div className="space-y-4">
-            <p>Frees up time for high-value legal work</p>
+            <p>Frees Up Time For High-Value Legal Work</p>
             <ul className="ml-4 list-disc space-y-1 text-muted-foreground/80 ">
-              <li>AI pre-fills all required TM filing forms</li>
-              <li>Reduces human errors & eliminates repetitive data entry</li>
+              <li>AI Pre-fills All Required TM Filing Forms</li>
+              <li>Reduces Human Errors & Eliminates Repetitive Data Entry</li>
             </ul>
           </div>
         }
@@ -87,15 +87,15 @@ export default function LandingPage() {
                 <span className="inline-block">📩</span> Email. Get Advice. Send
                 it to Clients.
                 <p className="mt-1 text-sm">
-                  Our AI lives in Outlook—just email your TM inquiry and get an
-                  instant draft response to clients ready in your outbox.
+                  Our AI Lives In Outlook—Just Email Your TM Inquiry And Get An
+                  Instant Draft Response To Clients Ready In Your Outbox..
                 </p>
               </li>
               <li>
                 <span className="inline-block">⚡</span> 24/7 AI-Powered
                 Efficiency
                 <p className="mt-1 text-sm">
-                  Always on and responds instantly. Work at your convenience.
+                  Always On and Responds Instantly. Work At Your Convenience.
                 </p>
               </li>
             </ul>
