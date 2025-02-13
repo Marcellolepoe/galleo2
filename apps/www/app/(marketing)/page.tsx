@@ -25,11 +25,7 @@ export default function LandingPage() {
         <Logos />
         <Spacer className="h-8 md:h-10" />
         <div className="text-center text-muted-foreground">
-          <p>Trained by IP Law Experts - Anticipates Unique TM Challenges</p>
-          <p>
-            Faster & More Efficient - No More Manual Drafting or Form-filling
-          </p>
-          <p>Increased Accuracy - AI Analyzes Every Case Instantly</p>
+          <p>Built by Silicon Valley AI experts and IP lawyers, Galleo seamlessly integrates AI into trademark filing—powering the future of IP practice.</p>
         </div>
       </Section>
 
