@@ -27,12 +27,12 @@ export const siteConfig: SiteConfig = {
     },
   ],
   hero: {
-    title: ["Instantly Draft TM Advice &", "Automate Filings"],
+    title: ["Turn Hours of Trademark Filing", "into Seconds"],
     description:
-      "Free your team from repetitive TM tasks—get AI-powered TM advice & filing automation tailored for law firms and TM agencies.",
+      "Galleo instantly drafts preliminary trademark assessments, fee quotes, and recommends NICE classifications, saving IP professionals up to 5 hours a day.",
     cta: {
       href: ROUTE_CONTACT_US,
-      label: "Save 5 hours per week",
+      label: "Book a Demo Today",
       target: "_blank",
       buttonVariant: "default",
     },
