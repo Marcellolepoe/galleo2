@@ -22,11 +22,11 @@ export default function LandingPage() {
         title="Who We Are"
         subtitle="Built by IP Professionals, Powered by AI"
       >
-        <Logos />
         <Spacer className="h-8 md:h-10" />
         <div className="text-center text-muted-foreground">
           <p>Built by Silicon Valley AI experts and IP lawyers, Galleo seamlessly integrates AI into trademark filing—powering the future of IP practice.</p>
         </div>
+        <Logos />
       </Section>
 
       <Spacer className="h-20 md:h-24" />
