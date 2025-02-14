@@ -32,16 +32,17 @@ export default function LandingPage() {
       <Spacer className="h-20 md:h-24" />
       <FeatureSection
         label="Knowledge"
-        title="Instant First-Cut Advise"
+        title="Instantly Drafted Enquiry Reponses"
         description={
           <div className="space-y-4">
-            <p>Lawyers Simply Review & Send—Saving Hours on Pre-filing TM Analysis .</p>
+            <p>Leave manual drafting in the past—Galleo instantly analyses and generates replies to queries, cutting down hours of work into seconds. Simply Review & Send.</p>
             <div className="space-y-2">
-              <p>AI Instantly Drafts A First-cut Review With:</p>
+              <p>Galleo's Draft Includes:</p>
               <ul className="ml-4 list-disc space-y-1 text-muted-foreground/80">
-                <li>Preliminary Trademark Assessment</li>
-                <li>Comprehensive Class & Filing Recommendations</li>
-                <li>Actionable Next Steps and Cost Estimates</li>
+                <li>Automated Business Search – Galleo researches the enquirer's business names, products and services, and integrates these insights in its drafted preliminary assessment.</li>
+                <li>NICE Classifications – Recommends the most suitable trademark classes based on the goods and services described.</li>
+                <li>Fee Estimates – Automatically calculates filing costs, helping clients understand potential expenses upfront.Actionable Next Steps and Cost Estimates</li>
+                <li>Follow-Up Requests – Identifies missing information and suggests clarifying questions to streamline the application process.</li>
               </ul>
             </div>
           </div>
