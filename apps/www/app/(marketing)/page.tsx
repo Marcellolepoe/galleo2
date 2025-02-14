@@ -35,14 +35,14 @@ export default function LandingPage() {
         title="Instantly Drafted Enquiry Reponses"
         description={
           <div className="space-y-4">
-            <p>Leave manual drafting in the past—Galleo instantly analyses and generates replies to queries, cutting down hours of work into seconds. Simply Review & Send.</p>
+            <p>Leave manual drafting behind—Galleo analyzes queries and generates replies in seconds. Simply review & send.</p>
             <div className="space-y-2">
               <p>Galleo's Draft Includes:</p>
               <ul className="ml-4 list-disc space-y-1 text-muted-foreground/80">
-                <li>Automated Business Search – Galleo researches the enquirer's business names, products and services, and integrates these insights in its drafted preliminary assessment.</li>
-                <li>NICE Classifications – Recommends the most suitable trademark classes based on the goods and services described.</li>
-                <li>Fee Estimates – Automatically calculates filing costs, helping clients understand potential expenses upfront.Actionable Next Steps and Cost Estimates</li>
-                <li>Follow-Up Requests – Identifies missing information and suggests clarifying questions to streamline the application process.</li>
+                <li>Automated Business Search – Instantly researches business names, products, and services for smarter assessments.</li>
+                <li>NICE Classifications – Recommends classes to be filed.</li>
+                <li>Fee Estimates – Automatically calculates filing costs.</li>
+                <li>Follow-Up Requests – Identifies missing information and suggests clarifications.</li>
               </ul>
             </div>
           </div>
