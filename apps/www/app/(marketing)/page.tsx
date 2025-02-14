@@ -39,10 +39,10 @@ export default function LandingPage() {
             <div className="space-y-2">
               <p>Galleo's Draft Includes:</p>
               <ul className="ml-4 list-disc space-y-1 text-muted-foreground/80">
-                <li>Automated Business Search – Instantly researches business names, products, and services for smarter assessments.</li>
-                <li>NICE Classifications – Recommends classes to be filed.</li>
-                <li>Fee Estimates – Automatically calculates filing costs.</li>
-                <li>Follow-Up Requests – Identifies missing information and suggests clarifications.</li>
+                <li>Integrated Client Research for Smarter Responses</li>
+                <li>Recommended NICE Classifications</li>
+                <li>Automatically Calculated Fee Estimates</li>
+                <li>Follow-Up Requests with Enquirer</li>
               </ul>
             </div>
           </div>
@@ -74,14 +74,13 @@ export default function LandingPage() {
 
       <FeatureSection
         label="Integrated"
-        title="Seamlessly Integrated into Your Workflow"
+        title="Your AI-Powered Associate—Right in Your Inbox"
         description={
           <div className="space-y-4">
             <p>No New Tools. No Extra Steps. Just Faster Work.</p>
             <ul className="ml-4 list-disc space-y-2 text-muted-foreground/80">
               <li>
-                <span className="inline-block">📩</span> Email. Get Advice. Send
-                it to Clients.
+                <span className="inline-block">📩</span> Seamless Outlook Integration – Works directly in your inbox.
                 <p className="mt-1 text-sm">
                   Our AI Lives In Outlook—Just Email Your TM Inquiry And Get An
                   Instant Draft Response To Clients Ready In Your Outbox..
