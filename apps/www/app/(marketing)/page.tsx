@@ -30,9 +30,7 @@ export default function LandingPage() {
       </Section>
 
       <Spacer className="h-20 md:h-24" />
-         <Section
-            title="Who We Are"
-          >
+      <Section title="Who We Are">
       <FeatureSection
         label="Knowledge"
         title="Instant First-Cut Advise"
