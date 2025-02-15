@@ -19,10 +19,9 @@ export function AIDrafting() {
     setDraft("");
     let index = 0;
     const interval = setInterval(() => {
-      if (index < refinedDraft.length) {
-        setDraft((prev) => (prev !== undefined ? prev + refinedDraft[index] : refinedDraft[index]));
-        index++;
-      } else {
+      setDraft((prev) => prev + (refinedDraft[index] || ""));
+      index++;
+      if (index >= refinedDraft.length) {
         clearInterval(interval);
         setIsGenerating(false);
       }
