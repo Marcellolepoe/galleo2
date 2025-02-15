@@ -12,7 +12,7 @@ export function AIDrafting() {
   );
   const [isGenerating, setIsGenerating] = useState(false);
 
-  const refinedDraft = `Dear Client,\n\nThank you for your inquiry.\n\nAfter reviewing your request, we recommend filing under Classes 35 & 41 for proper trademark protection.\n\nThe estimated filing fees for this application are SGD 450.\n\nPlease let us know if you have any further questions.\n\nBest regards,\n\n[Your Firm]`;
+  const refinedDraft = `  Dear Client,\n\nThank you for your inquiry.\n\nAfter reviewing your request, we recommend filing under Classes 35 & 41 for proper trademark protection.\n\nThe estimated filing fees for this application are SGD 450.\n\nPlease let us know if you have any further questions.\n\nBest regards,\n[Your Firm]`;
 
   const handleRefineDraft = () => {
     setIsGenerating(true);
@@ -48,7 +48,7 @@ export function AIDrafting() {
         <div className="flex flex-col gap-1.5">
           <input
             type="text"
-            value="Make this formal and professional"
+            value="Please Be More Formal and Professioanl"
             readOnly
             className="w-full px-4 py-1.5 border border-gray-300 rounded-md bg-gray-100 text-gray-600 text-sm cursor-not-allowed"
           />
