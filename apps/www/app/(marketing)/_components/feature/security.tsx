@@ -3,7 +3,7 @@
 import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
-export function Security() {
+export function Secure() {
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: true, margin: "-100px" });
 
