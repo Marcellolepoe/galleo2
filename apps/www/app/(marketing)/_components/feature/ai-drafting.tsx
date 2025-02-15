@@ -1,12 +1,11 @@
 "use client";
 
-import { motion, useAnimation } from "framer-motion";
 import { useState } from "react";
 import { Button } from "@galleo/ui/components/base/button";
 
 export function AIDrafting() {
   const [draft, setDraft] = useState("");
-  const controls = useAnimation();
+  const [loading, setLoading] = useState(false);
 
   const exampleDraft = [
     "Dear Client,",
@@ -19,11 +18,13 @@ export function AIDrafting() {
   ];
 
   const generateDraft = async () => {
+    setLoading(true);
     setDraft("");
     for (let i = 0; i < exampleDraft.length; i++) {
-      await new Promise((resolve) => setTimeout(resolve, 500));
+      await new Promise((resolve) => setTimeout(resolve, 500)); // Simulates AI writing effect
       setDraft((prev) => prev + "\n" + exampleDraft[i]);
     }
+    setLoading(false);
   };
 
   return (
@@ -31,17 +32,16 @@ export function AIDrafting() {
       <div className="space-y-4">
         <div className="text-muted-foreground text-sm">AI-Drafted Response:</div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          className="space-y-2 border rounded-lg p-4 bg-white shadow"
-        >
-          <pre className="text-foreground text-sm whitespace-pre-wrap">{draft || "Generating draft..."}</pre>
-        </motion.div>
+        <div className="space-y-2 border rounded-lg p-4 bg-white shadow text-sm">
+          <pre className="text-foreground whitespace-pre-wrap">
+            {draft || (loading ? "Generating draft..." : "Click 'Generate Draft' to begin.")}
+          </pre>
+        </div>
 
         <div className="flex gap-2">
-          <Button onClick={generateDraft} variant="primary">Generate Draft</Button>
+          <Button onClick={generateDraft} variant="primary" disabled={loading}>
+            {loading ? "Generating..." : "Generate Draft"}
+          </Button>
           <Button variant="outline">Refine Tone</Button>
           <Button variant="outline">Make it Concise</Button>
         </div>
