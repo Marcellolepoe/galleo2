@@ -115,7 +115,39 @@ export default function LandingPage() {
         ctaText="Learn more about integrations"
         showcaseContent={<Integrated />}
       />
-
+      
+      <Spacer className="h-20 md:h-24" />
+     
+      <FeatureSection
+        label="Features"
+        title="Effortless Drafting, Fully in Your Control"
+        description={
+          <div className="space-y-4">
+            <p>Save time without sacrificing quality—Galleo drafts replies in your style for consistent, professional client interactions. Need changes? Just prompt Galleo to refine or edit the draft in seconds.</p>
+            <ul className="ml-4 list-disc space-y-1 text-muted-foreground/80 ">
+              <li>Smart, Personalized Drafting 
+                <p className="mt-1 text-sm"> 
+                Galleo crafts replies that incorporate your firm’s templates, ensuring consistency and professionalism in every response.
+                </p> 
+              </li>
+              <li>Customizable Content 
+                <p className="mt-1 text-sm">
+                Modify drafts as needed while maintaining structured, legally sound replies tailored to your client’s needs.
+                </p>
+              </li>
+              <li>AI-Powered Refinements 
+                <p className="mt-1 text-sm"> 
+                  Simply prompt Galleo to adjust tone, wording, or details—so you stay in control without the hassle of manual edits.
+                </p>
+              </li>
+            </ul>
+          </div>
+        }
+        ctaText="See how fast we can work"
+        showcaseContent={<AutomatedFilling />}
+        position="left"
+      />
+      
       <Spacer className="h-20 md:h-24" />
 
       <Cta />
