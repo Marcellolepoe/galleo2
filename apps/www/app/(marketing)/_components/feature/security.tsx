@@ -1,20 +1,24 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 export function Security() {
-  const [processedCount, setProcessedCount] = useState(0);
+  const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { once: true, margin: "-100px" });
+
+  const [processedEmails, setProcessedEmails] = useState(0);
   const [processing, setProcessing] = useState(false);
 
   const handleProcessEmails = () => {
     setProcessing(true);
-    setProcessedCount(0);
+    setProcessedEmails(0);
 
     let index = 0;
     const interval = setInterval(() => {
-      setProcessedCount((prev) => prev + 1);
+      setProcessedEmails((prev) => prev + 1);
       index++;
-      if (index >= 5) { // Fixed count for simplicity
+      if (index >= 5) {
         clearInterval(interval);
         setProcessing(false);
       }
@@ -22,20 +26,27 @@ export function Security() {
   };
 
   return (
-    <div className="p-4 border border-gray-300 rounded-lg shadow-sm bg-white w-full max-w-md mx-auto">
-      <h2 className="text-lg font-semibold text-gray-800">Email Processing</h2>
-      
-      <div className="mt-4 p-3 bg-gray-100 rounded-md border border-gray-200 text-gray-700 text-sm">
-        Processed: {processedCount} / 5
-      </div>
-
-      <button
-        onClick={handleProcessEmails}
-        disabled={processing}
-        className="w-full mt-4 px-4 py-2 bg-black text-white rounded-md text-sm font-medium hover:bg-gray-900 disabled:bg-gray-700"
+    <div className="relative w-full rounded-lg bg-background p-6 shadow-sm" ref={containerRef}>
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className="space-y-2"
       >
-        {processing ? "Processing..." : "Start Processing"}
-      </button>
+        <div className="text-foreground text-sm bg-white p-4 rounded-lg border border-gray-300">
+          <p className="text-gray-600">Secure Processing:</p>
+          <p className="text-gray-700 text-sm">
+            Processed {processedEmails} / 5 Emails
+          </p>
+        </div>
+        <button
+          onClick={handleProcessEmails}
+          disabled={processing}
+          className="w-full px-4 py-2 bg-black text-white rounded-md text-sm font-medium hover:bg-gray-900 disabled:bg-gray-700"
+        >
+          {processing ? "Processing..." : "Start Secure Processing"}
+        </button>
+      </motion.div>
     </div>
   );
 }
