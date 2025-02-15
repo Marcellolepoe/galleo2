@@ -66,8 +66,9 @@ export const siteConfig: SiteConfig = {
     ],
   },
   cta: {
-    subtitle: "See how AI can close you more deals this week",
-    buttonText: "Close more deals",
+    subtitle: "Reclaim Your Time and Elevate Your Practice Today",
+    description: "Whether you’re a legal IP professional or trademark lawyer, our solution adapts to your needs and saves you time, so you can focus on expanding your business and doing higher value work."
+    buttonText: "Book a Demo with Us Today",
     href: ROUTE_CONTACT_US,
   },
   footer: {
