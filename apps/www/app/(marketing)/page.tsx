@@ -42,7 +42,7 @@ export default function LandingPage() {
                 <li>Integrated Client Research for Smarter Responses</li>
                 <li>Recommended NICE Classifications</li>
                 <li>Automatically Calculated Fee Estimates</li>
-                <li>Follow-Up Requests with Enquirer</li>
+                <li>Follow-Up Requests Customized for Each Client</li>
               </ul>
             </div>
           </div>
@@ -55,13 +55,13 @@ export default function LandingPage() {
      
       <FeatureSection
         label="Features"
-        title="Effortless Drafting, Fully in Your Control"
+        title="Effortless Drafting, Always In Your Control"
         description={
           <div className="space-y-4">
             <p>Save time without sacrificing quality—Galleo drafts replies in your style for consistent, professional client interactions. Need changes? Just prompt Galleo to refine or edit the draft in seconds.</p>
             <ul className="ml-4 list-disc space-y-1 text-muted-foreground/80 ">
               <li>Smart, Personalized Drafting </li>
-              <li>Customizable Content Which Incorporates Your Templates </li>
+              <li>Customizable Content Incorporating Your Templates </li>
               <li>Prompt Galleo to Refine Tone & Wording Instantly </li>
             </ul>
           </div>
@@ -101,16 +101,8 @@ export default function LandingPage() {
           <div className="space-y-4">
             <p>Galleo keeps your information secure with encryption at every step. No data storage, no unnecessary access—just complete privacy and control.</p>
             <ul className="ml-4 list-disc space-y-1 text-muted-foreground/80 ">
-              <li>End-to-End Encryption  
-                <p className="mt-1 text-sm"> 
-                Every interaction is encrypted, ensuring confidentiality.
-                </p> 
-              </li>
-              <li>No Data Storage  
-                <p className="mt-1 text-sm">
-                 Galleo doesn’t store your information —only you have access to your data.
-                </p>
-              </li>
+              <li>End-to-End Encryption </li>
+              <li>No Data Storage </li>
               <li>Strict Access Control  
                 <p className="mt-1 text-sm"> 
                   Galleo only reads the emails you select for drafting, ensuring complete privacy and control.
