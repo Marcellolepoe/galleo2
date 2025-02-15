@@ -20,7 +20,7 @@ export function AIDrafting() {
     let index = 0;
     const interval = setInterval(() => {
       if (index < refinedDraft.length) {
-        setDraft((prev) => prev + refinedDraft[index]);
+        setDraft((prev) => (prev !== undefined ? prev + refinedDraft[index] : refinedDraft[index]));
         index++;
       } else {
         clearInterval(interval);
@@ -33,7 +33,7 @@ export function AIDrafting() {
     <div className="relative w-full rounded-lg bg-background p-6 shadow-sm" ref={containerRef}>
       <div className="space-y-4">
         <div className="space-y-4 text-foreground text-sm bg-white p-6 rounded-lg border border-gray-300 font-sans">
-          {draft.split("\n").map((text, index) => (
+          {draft && draft.split("\n").map((text, index) => (
             <motion.p
               key={index}
               initial={{ opacity: 0, y: 10 }}
@@ -42,7 +42,7 @@ export function AIDrafting() {
               className="whitespace-pre-wrap break-words"
               style={{ lineHeight: "1.6" }}
             >
-              {text}
+              {text || "\u00A0"} {/* Prevents missing first letter */}
             </motion.p>
           ))}
         </div>
