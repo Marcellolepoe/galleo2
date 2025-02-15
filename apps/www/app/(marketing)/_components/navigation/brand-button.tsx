@@ -13,7 +13,7 @@ export function BrandButton({ className }: { className?: string }) {
       <img 
         src="/galleo-icon.svg" 
         alt="Galleo Logo" 
-        className="h-[80px] w-[220px] md:h-[100px] md:w-[260px]" 
+        className="h-[120px] w-[300px] md:h-[150px] md:w-[350px]" 
       />
     </Link>
   );
