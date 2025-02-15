@@ -18,7 +18,7 @@ export function Email() {
 
   return (
     <div
-      className="relative w-full rounded-lg bg-background p-6 shadow-sm"
+      className="relative w-full rounded-2xl bg-[#1F2A37] p-6 shadow-sm"
       ref={containerRef}
     >
       <div className="space-y-4">
@@ -32,7 +32,7 @@ export function Email() {
           </div>
         </div>
 
-        <div className="space-y-4 text-foreground text-sm">
+        <div className="space-y-4 bg-white rounded-2xl text-black text-sm p-4">
           {paragraphs.map((text, index) => (
             <motion.p
               key={text}

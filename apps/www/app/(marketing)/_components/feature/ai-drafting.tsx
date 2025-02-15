@@ -29,9 +29,9 @@ export function AIDrafting() {
   };
 
   return (
-    <div className="relative w-full rounded-lg bg-background p-6 shadow-sm" ref={containerRef}>
-      <div className="space-y-2">
-        <div className="text-foreground text-sm bg-white p-4 rounded-lg border border-gray-300 font-sans">
+    <div className="relative w-full rounded-xl bg-[#1F2A37] p-6 shadow-sm" ref={containerRef}>
+      <div className="space-y-6">
+        <div className="text-black text-sm bg-white p-4 rounded-xl font-sans">
           {draft && draft.split("\n").map((text, index) => (
             <motion.p
               key={index}
@@ -45,21 +45,31 @@ export function AIDrafting() {
             </motion.p>
           ))}
         </div>
-        <div className="flex flex-col gap-1.5">
-          <input
-            type="text"
-            value="Please Be More Formal and Professional"
-            readOnly
-            className="w-full px-4 py-1.5 border border-gray-300 rounded-md bg-gray-100 text-gray-600 text-sm cursor-not-allowed"
-          />
-          <button
-            type="button"
-            onClick={handleRefineDraft}
-            disabled={isGenerating}
-            className="w-full px-4 py-1 bg-black text-white rounded-md text-sm font-medium hover:bg-gray-900 disabled:bg-gray-700"
-          >
-            {isGenerating ? "Generating..." : "Prompt Galleo"}
-          </button>
+        <div className="flex flex-col gap-4 items-center">
+          <div className="w-full max-w-xs">
+            <input
+              type="text"
+              value="Please Be More Formal and Professional"
+              readOnly
+              placeholder="Enter your prompt here"
+              className="w-full px-3 py-2 border border-[#A0A2A5] rounded-xl bg-[#E7E7E7] text-black text-sm cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-[#5F6368] transition-all duration-300 ease-in-out hover:border-[#5F6368]"
+              style={{
+                position: "relative",
+                paddingRight: "25px",
+              }}
+            />
+           
+          </div>
+          <div className="w-full max-w-xs">
+            <button
+              type="button"
+              onClick={handleRefineDraft}
+              disabled={isGenerating}
+              className="w-full px-4 py-2 bg-[#4E5B62] text-white rounded-xl text-sm font-medium hover:bg-[#3C474D] disabled:bg-[#A0A2A5] transition-all duration-300 ease-in-out"
+            >
+              {isGenerating ? "Generating..." : "Prompt Galleo (Click Here!)"}
+            </button>
+          </div>
         </div>
       </div>
     </div>

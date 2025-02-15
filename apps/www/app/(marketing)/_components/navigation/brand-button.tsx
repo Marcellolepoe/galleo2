@@ -11,9 +11,9 @@ export function BrandButton({ className }: { className?: string }) {
       className={cn("flex items-center space-x-3", className)}
     >
       <img 
-        src="/galleo-icon.svg" 
+        src="/galleo-icon-3.svg" 
         alt="Galleo Logo" 
-        className="h-[80px] w-[220px] md:h-[100px] md:w-[260px]" 
+        className="h-[40px] w-[120px] md:h-[50px] md:w-[150px]" 
       />
     </Link>
   );

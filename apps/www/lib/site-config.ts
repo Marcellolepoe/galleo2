@@ -2,7 +2,7 @@ import type { ButtonProps } from "@galleo/ui/components/base/button";
 import { type IconProps, Icons } from "@galleo/ui/icon";
 import { ROUTE_CONTACT_US } from "./routes";
 
-const COMPANY_NAME = "Ink & Scribe";
+const COMPANY_NAME = "Galleo";
 const SUPPORT_EMAIL = "support@inkandscribe.com";
 
 export const siteConfig: SiteConfig = {
@@ -23,16 +23,16 @@ export const siteConfig: SiteConfig = {
       buttonVariant: "default",
       target: "_blank",
       href: ROUTE_CONTACT_US,
-      label: "Save 5 hours per week",
+      label: "Book a demo today",
     },
   ],
   hero: {
-    title: ["Turn Hours of Trademark Filing", "into Seconds"],
+    title: ["Turn hours of preliminary TM review into seconds"],
     description:
-      "Galleo instantly drafts preliminary trademark assessments, fee quotes, and recommends NICE classifications, saving IP professionals up to 5 hours a day.",
+      "Galleo instantly drafts preliminary trademark assessments, fee quotes, and recommends NICE classifications, saving IP professionals up to 5 hours a day.",
     cta: {
       href: ROUTE_CONTACT_US,
-      label: "Book a Demo Today",
+      label: "Book a demo today",
       target: "_blank",
       buttonVariant: "default",
     },
@@ -66,8 +66,8 @@ export const siteConfig: SiteConfig = {
     ],
   },
   cta: {
-    subtitle: "Reclaim Your Time and Elevate Your Practice Today",
-    buttonText: "Book a Demo with Us Today",
+    subtitle: "Reclaim your time and elevate your practice today",
+    buttonText: "Book a demo today",
     href: ROUTE_CONTACT_US,
   },
   footer: {

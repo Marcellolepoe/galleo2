@@ -18,12 +18,11 @@ export function HeroCTA() {
           href={siteConfig.hero.cta.href}
           className={cn(
             buttonVariants({ variant: siteConfig.hero.cta.buttonVariant }),
-            "flex w-full gap-2 text-background sm:w-auto",
           )}
           data-attr={`hero-cta-${siteConfig.hero.cta.label}`}
           target={siteConfig.hero.cta.target}
         >
-          <siteConfig.icon className="size-6" />
+
           {siteConfig.hero.cta.label}
         </Link>
       </motion.div>

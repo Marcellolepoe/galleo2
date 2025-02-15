@@ -4,7 +4,7 @@ import { ease } from "./constant";
 
 export function HeroTitle() {
   return (
-    <div className="flex w-full max-w-2xl flex-col items-center space-y-4 overflow-hidden">
+    <div className="flex w-full max-w-5xl flex-col items-center space-y-4 overflow-hidden">
       <motion.h1
         className="text-center font-medium text-4xl text-foreground sm:text-5xl md:text-6xl"
         initial={{ filter: "blur(10px)", opacity: 0, y: 50 }}
@@ -32,7 +32,7 @@ export function HeroTitle() {
         ))}
       </motion.h1>
       <motion.p
-        className="mx-auto max-w-xl text-balance text-center text-lg text-muted-foreground leading-7 sm:text-xl sm:leading-snug"
+        className="mx-auto max-w-4xl text-balance text-center text-lg text-muted-foreground leading-7 sm:text-xl sm:leading-snug"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
