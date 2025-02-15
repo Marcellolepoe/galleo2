@@ -34,7 +34,7 @@ export function Secure() {
         className="space-y-2"
       >
         <div className="text-foreground text-sm bg-white p-4 rounded-lg border border-gray-300">
-          <p className="text-gray-600">Secure Processing:</p>
+          <p className="text-gray-600">Secure Processing 123:</p>
           <p className="text-gray-700 text-sm">
             Processed {processedEmails} / 5 Emails
           </p>
