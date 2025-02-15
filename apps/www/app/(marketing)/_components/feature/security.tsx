@@ -1,52 +1,42 @@
 "use client";
 
-import { useState, useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Eye, Mail } from "lucide-react";
 
-export function Secure() {
-  const containerRef = useRef(null);
-  const isInView = useInView(containerRef, { once: true, margin: "-100px" });
+export function Security() {
+  const [visible, setVisible] = useState(true);
 
-  const [processedEmails, setProcessedEmails] = useState(0);
-  const [processing, setProcessing] = useState(false);
-
-  const handleProcessEmails = () => {
-    setProcessing(true);
-    setProcessedEmails(0);
-
-    let index = 0;
+  useEffect(() => {
     const interval = setInterval(() => {
-      setProcessedEmails((prev) => prev + 1);
-      index++;
-      if (index >= 5) {
-        clearInterval(interval);
-        setProcessing(false);
-      }
-    }, 500);
-  };
+      setVisible((prev) => !prev);
+    }, 2000); // Toggles visibility every 2 seconds
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <div className="relative w-full rounded-lg bg-background p-6 shadow-sm" ref={containerRef}>
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
-        className="space-y-2"
-      >
-        <div className="text-foreground text-sm bg-white p-4 rounded-lg border border-gray-300">
-          <p className="text-gray-600">Secure Processing 123:</p>
-          <p className="text-gray-700 text-sm">
-            Processed {processedEmails} / 5 Emails
-          </p>
-        </div>
-        <button
-          onClick={handleProcessEmails}
-          disabled={processing}
-          className="w-full px-4 py-2 bg-black text-white rounded-md text-sm font-medium hover:bg-gray-900 disabled:bg-gray-700"
+    <div className="relative w-full max-w-md mx-auto bg-white p-6 border border-gray-300 rounded-lg shadow-sm text-center">
+      <h2 className="text-lg font-semibold text-gray-800">Your Emails Stay Private</h2>
+      <p className="text-gray-600 text-sm mb-4">We don’t see your emails. Only you do.</p>
+      
+      <div className="relative flex items-center justify-center h-32">
+        <motion.div
+          initial={{ opacity: 1 }}
+          animate={{ opacity: visible ? 1 : 0.2 }}
+          transition={{ duration: 1.5 }}
+          className="absolute"
         >
-          {processing ? "Processing..." : "Start Secure Processing"}
-        </button>
-      </motion.div>
+          <Mail className="w-16 h-16 text-blue-500" />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: visible ? 0 : 1 }}
+          transition={{ duration: 1.5 }}
+          className="absolute"
+        >
+          <Eye className="w-16 h-16 text-gray-400" />
+        </motion.div>
+      </div>
     </div>
   );
 }
