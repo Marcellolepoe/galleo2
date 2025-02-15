@@ -12,7 +12,7 @@ export function AIDrafting() {
   );
   const [isGenerating, setIsGenerating] = useState(false);
 
-  const refinedDraft = `Dear Client,\n\nThank you for your inquiry.\n\nAfter reviewing your request, we recommend filing under NICE Class 35 & 41 to ensure proper trademark protection.\n\nThe estimated filing fees for this application are SGD 450.\n\nPlease let us know if you require any refinements.\n\nBest regards,\n\n[Your Firm]`;
+  const refinedDraft = `Dear Client,\n\nThank you for your inquiry.\n\nAfter reviewing your request, we recommend filing under Classes 35 & 41 for proper trademark protection.\n\nThe estimated filing fees for this application are SGD 450.\n\nPlease let us know if you have any further questions.\n\nBest regards,\n\n[Your Firm]`;
 
   const handleRefineDraft = () => {
     setIsGenerating(true);
