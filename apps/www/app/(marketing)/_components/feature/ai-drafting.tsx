@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@galleo/ui/components/base/button";
 
 export function AIDrafting() {
   const [draft, setDraft] = useState("");
@@ -28,22 +27,26 @@ export function AIDrafting() {
   };
 
   return (
-    <div className="relative w-full rounded-lg bg-background p-6 shadow-sm">
-      <div className="space-y-4">
-        <div className="text-muted-foreground text-sm">AI-Drafted Response:</div>
+    <div style={{ padding: "16px", borderRadius: "8px", border: "1px solid #ddd", boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)" }}>
+      <div>
+        <p style={{ fontSize: "14px", color: "#666" }}>AI-Drafted Response:</p>
 
-        <div className="space-y-2 border rounded-lg p-4 bg-white shadow text-sm">
-          <pre className="text-foreground whitespace-pre-wrap">
+        <div style={{ padding: "12px", border: "1px solid #ccc", borderRadius: "6px", background: "#fff", fontSize: "14px", minHeight: "100px" }}>
+          <pre style={{ whiteSpace: "pre-wrap", margin: 0 }}>
             {draft || (loading ? "Generating draft..." : "Click 'Generate Draft' to begin.")}
           </pre>
         </div>
 
-        <div className="flex gap-2">
-          <Button onClick={generateDraft} variant="primary" disabled={loading}>
+        <div style={{ display: "flex", gap: "8px", marginTop: "12px" }}>
+          <button onClick={generateDraft} disabled={loading} style={{ padding: "8px 12px", borderRadius: "4px", background: "#007bff", color: "#fff", border: "none", cursor: "pointer" }}>
             {loading ? "Generating..." : "Generate Draft"}
-          </Button>
-          <Button variant="outline">Refine Tone</Button>
-          <Button variant="outline">Make it Concise</Button>
+          </button>
+          <button style={{ padding: "8px 12px", borderRadius: "4px", background: "#f8f9fa", border: "1px solid #ccc", cursor: "pointer" }}>
+            Refine Tone
+          </button>
+          <button style={{ padding: "8px 12px", borderRadius: "4px", background: "#f8f9fa", border: "1px solid #ccc", cursor: "pointer" }}>
+            Make it Concise
+          </button>
         </div>
       </div>
     </div>
