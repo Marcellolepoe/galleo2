@@ -19,7 +19,7 @@ export function AIDrafting() {
     setDraft("");
     let index = 0;
     const interval = setInterval(() => {
-      setDraft((prev) => prev + refinedDraft[index]);
+      setDraft((prev) => (prev ? prev + refinedDraft[index] : refinedDraft[index]));
       index++;
       if (index === refinedDraft.length) {
         clearInterval(interval);
@@ -41,7 +41,7 @@ export function AIDrafting() {
               className="whitespace-pre-wrap break-words"
               style={{ lineHeight: "1.6" }}
             >
-              {text}
+              {text || "\u00A0"} {/* Prevents missing first letter */}
             </motion.p>
           ))}
         </div>
