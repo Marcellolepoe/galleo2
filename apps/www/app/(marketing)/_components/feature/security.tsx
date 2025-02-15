@@ -3,16 +3,17 @@
 import { useState } from "react";
 
 export function SecureEmailPipeline() {
-  const [processedEmails, setProcessedEmails] = useState([]);
+  const [processedCount, setProcessedCount] = useState(0);
   const emails = ["Email 1", "Email 2", "Email 3", "Email 4", "Email 5"];
   const [processing, setProcessing] = useState(false);
 
   const processEmails = () => {
     setProcessing(true);
-    setProcessedEmails([]);
+    setProcessedCount(0);
+
     let index = 0;
     const interval = setInterval(() => {
-      setProcessedEmails((prev) => [...prev, emails[index]]);
+      setProcessedCount((prev) => prev + 1);
       index++;
       if (index >= emails.length) {
         clearInterval(interval);
@@ -22,23 +23,11 @@ export function SecureEmailPipeline() {
   };
 
   return (
-    <div className="relative w-full max-w-lg mx-auto rounded-lg bg-white p-6 shadow-md border border-gray-200">
-      <h2 className="text-lg font-semibold text-gray-800 mb-4">Secure Email Pipeline</h2>
+    <div className="w-full max-w-md mx-auto bg-white p-4 border border-gray-300 rounded-lg shadow-sm">
+      <h2 className="text-lg font-semibold text-gray-800">Secure Email Processing</h2>
       
-      <div className="bg-gray-50 p-4 rounded-lg border border-gray-300">
-        <p className="text-gray-600 font-medium mb-2">Incoming Emails:</p>
-        <div className="space-y-2">
-          {emails.map((email, index) => (
-            <div
-              key={index}
-              className={`p-2 rounded-md text-sm text-gray-700 transition-all ${
-                processedEmails.includes(email) ? "bg-green-100 border border-green-400 text-green-800" : "bg-gray-200 border border-gray-300"
-              }`}
-            >
-              {email}
-            </div>
-          ))}
-        </div>
+      <div className="mt-4 p-3 bg-gray-100 rounded-md border border-gray-200">
+        <p className="text-gray-700 text-sm">Processing {processedCount} / {emails.length} Emails</p>
       </div>
 
       <button
@@ -46,7 +35,7 @@ export function SecureEmailPipeline() {
         disabled={processing}
         className="w-full mt-4 px-4 py-2 bg-black text-white rounded-md text-sm font-medium hover:bg-gray-900 disabled:bg-gray-700"
       >
-        {processing ? "Processing..." : "Process Emails Securely"}
+        {processing ? "Processing..." : "Start Processing"}
       </button>
     </div>
   );
