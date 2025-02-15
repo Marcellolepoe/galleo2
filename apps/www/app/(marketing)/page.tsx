@@ -90,7 +90,7 @@ export default function LandingPage() {
         title="Your AI-Powered Associate—Right in Your Inbox"
         description={
           <div className="space-y-4">
-            <p>No New Tools. No Extra Steps. Just Faster Work.</p>
+            <p>Galleo works like a digital first-year associate, saving you hours by handling trademark tasks instantly—all within Outlook. No extra tools, no disruptions.</p>
             <ul className="ml-4 list-disc space-y-2 text-muted-foreground/80">
               <li>
                 <span className="inline-block">📩</span> Seamless Outlook Integration – Works directly in your inbox.
@@ -99,11 +99,14 @@ export default function LandingPage() {
                   Instant Draft Response To Clients Ready In Your Outbox..
                 </p>
               </li>
-              <li>
-                <span className="inline-block">⚡</span> 24/7 AI-Powered
-                Efficiency
+              <li>Works Whenever, Wherever You Are 
                 <p className="mt-1 text-sm">
-                  Always On and Responds Instantly. Work At Your Convenience.
+                  Galleo never sleeps. Whether you're in the office, in court, or on the go, it’s always ready to assist.
+                </p>
+              </li>Your First-Year AI Associate 
+              <li> 
+                <p className="mt-1 text-sm">
+                  Saves you 3-5 hours a day by managing trademark inquiries, so you can focus on what matters. 
                 </p>
               </li>
             </ul>
