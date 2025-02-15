@@ -48,7 +48,7 @@ export function AIDrafting() {
         <div className="flex flex-col gap-1.5">
           <input
             type="text"
-            value="Please Be More Formal and Professioanl"
+            value="Please Be More Formal and Professional"
             readOnly
             className="w-full px-4 py-1.5 border border-gray-300 rounded-md bg-gray-100 text-gray-600 text-sm cursor-not-allowed"
           />
