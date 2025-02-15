@@ -3,7 +3,6 @@ import { Spacer } from "@galleo/ui/components/base/spacer";
 import { Cta } from "./_components/cta";
 import { AutomatedFilling } from "./_components/feature/automated-filling";
 import { AIDrafting } from "./_components/feature/ai-drafting";
-import { Secure } from "./_components/feature/security";
 import { FeatureSection } from "./_components/feature/container";
 import { Email } from "./_components/feature/email";
 import { Integrated } from "./_components/feature/integrated";
@@ -114,7 +113,7 @@ export default function LandingPage() {
           </div>
         }
         ctaText="See how fast we can work"
-        showcaseContent={<Secure />}
+        showcaseContent={<AIDrafting />}
         position="left"
       />
       
