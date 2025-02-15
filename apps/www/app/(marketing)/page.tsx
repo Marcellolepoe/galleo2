@@ -31,7 +31,7 @@ export default function LandingPage() {
 
       <Spacer className="h-20 md:h-24" />
       <FeatureSection
-        label="Knowledge"
+        label="Features"
         title="Instantly Drafted Enquiry Reponses"
         description={
           <div className="space-y-4">
@@ -54,14 +54,27 @@ export default function LandingPage() {
       <Spacer className="h-20 md:h-24" />
      
       <FeatureSection
-        label="Speed"
-        title="Automated Filing"
+        label="Features"
+        title="Effortless Drafting, Fully in Your Control"
         description={
           <div className="space-y-4">
-            <p>Frees Up Time For High-Value Legal Work</p>
+            <p>Save time without sacrificing quality—Galleo drafts replies in your style for consistent, professional client interactions. Need changes? Just prompt Galleo to refine or edit the draft in seconds.</p>
             <ul className="ml-4 list-disc space-y-1 text-muted-foreground/80 ">
-              <li>AI Pre-fills All Required TM Filing Forms</li>
-              <li>Reduces Human Errors & Eliminates Repetitive Data Entry</li>
+              <li>Smart, Personalized Drafting 
+                <p className="mt-1 text-sm"> 
+                Galleo crafts replies that incorporate your firm’s templates, ensuring consistency and professionalism in every response.
+                </p> 
+              </li>
+              <li>Customizable Content 
+                <p className="mt-1 text-sm">
+                Modify drafts as needed while maintaining structured, legally sound replies tailored to your client’s needs.
+                </p>
+              </li>
+              <li>AI-Powered Refinements 
+                <p className="mt-1 text-sm"> 
+                  Simply prompt Galleo to adjust tone, wording, or details—so you stay in control without the hassle of manual edits.
+                </p>
+              </li>
             </ul>
           </div>
         }
