@@ -8,12 +8,13 @@ export function BrandButton({ className }: { className?: string }) {
     <Link
       href={ROUTE_HOME}
       title={siteConfig.name}
-      className={cn("flex items-center space-x-2", className)}
+      className={cn("flex items-center space-x-3", className)}
     >
-      <img src="/Galleo-icon.png" alt="Galleo Logo" className="h-[30px] w-[30px]" />
-      <span className="font-serif text-xl tracking-tight">
-        {siteConfig.name}
-      </span>
+      <img 
+        src="/galleo-icon.svg" 
+        alt="Galleo Logo" 
+        className="h-[50px] w-[160px]" 
+      />
     </Link>
   );
 }
