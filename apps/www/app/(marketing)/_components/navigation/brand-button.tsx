@@ -10,7 +10,7 @@ export function BrandButton({ className }: { className?: string }) {
       title={siteConfig.name}
       className={cn("flex items-center space-x-2", className)}
     >
-      <siteConfig.icon className="size-[30px]" />
+      <img src="/Galleo-icon.png" alt="Galleo Logo" className="h-[30px] w-[30px]" />
       <span className="font-serif text-xl tracking-tight">
         {siteConfig.name}
       </span>
