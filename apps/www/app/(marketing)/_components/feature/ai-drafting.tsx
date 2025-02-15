@@ -31,15 +31,15 @@ export function AIDrafting() {
   return (
     <div className="relative w-full rounded-lg bg-background p-6 shadow-sm" ref={containerRef}>
       <div className="space-y-4">
-        <div className="space-y-4 text-foreground text-sm bg-white p-6 rounded-lg border border-gray-300 font-sans">
+        <div className="text-foreground text-sm bg-white p-6 rounded-lg border border-gray-300 font-sans">
           {draft && draft.split("\n").map((text, index) => (
             <motion.p
               key={index}
               initial={{ opacity: 0, y: 10 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
               transition={{ duration: 0.5, delay: index * 0.05, ease: "easeOut" }}
-              className="whitespace-pre-wrap break-words"
-              style={{ lineHeight: "1.6" }}
+              className="whitespace-pre-wrap break-words mb-2"
+              style={{ lineHeight: "1.4" }}
             >
               {text || "\u00A0"} {/* Prevents missing first letter */}
             </motion.p>
