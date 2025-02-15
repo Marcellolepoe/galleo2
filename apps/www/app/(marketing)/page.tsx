@@ -3,6 +3,7 @@ import { Spacer } from "@galleo/ui/components/base/spacer";
 import { Cta } from "./_components/cta";
 import { AutomatedFilling } from "./_components/feature/automated-filling";
 import { AIDrafting } from "./_components/feature/ai-drafting";
+import { AIDrafting } from "./_components/feature/security";
 import { FeatureSection } from "./_components/feature/container";
 import { Email } from "./_components/feature/email";
 import { Integrated } from "./_components/feature/integrated";
@@ -82,7 +83,7 @@ export default function LandingPage() {
             <p>Galleo works like a digital first-year associate, saving you hours by handling trademark tasks instantly—all within Outlook. No extra tools, no disruptions.</p>
             <ul className="ml-4 list-disc space-y-2 text-muted-foreground/80">
               <li>
-                <span className="inline-block">📩</span> Direct Outlook Integration, Sent Instantly to Your Drafts
+                Direct Outlook Integration, Sent Instantly to Your Drafts
               </li>
               <li>Works Whenever, Wherever You Are
               </li> 
@@ -113,7 +114,7 @@ export default function LandingPage() {
           </div>
         }
         ctaText="See how fast we can work"
-        showcaseContent={<AIDrafting />}
+        showcaseContent={<Security />}
         position="left"
       />
       
