@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export function SecureEmailPipeline() {
+export function Security() {
   const [processedCount, setProcessedCount] = useState(0);
   const [processing, setProcessing] = useState(false);
 
