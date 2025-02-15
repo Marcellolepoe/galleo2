@@ -1,17 +1,14 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Mail } from "lucide-react";
 
 export function Secure() {
   const [visible, setVisible] = useState(true);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setVisible((prev) => !prev);
-    }, 2000); // Toggles visibility every 2 seconds
-    return () => clearInterval(interval);
-  }, []);
+  setTimeout(() => {
+    setVisible((prev) => !prev);
+  }, 2000);
 
   return (
     <div className="w-full max-w-md mx-auto bg-white p-6 border border-gray-300 rounded-lg shadow-sm text-center">
