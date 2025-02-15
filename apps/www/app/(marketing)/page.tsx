@@ -60,21 +60,9 @@ export default function LandingPage() {
           <div className="space-y-4">
             <p>Save time without sacrificing quality—Galleo drafts replies in your style for consistent, professional client interactions. Need changes? Just prompt Galleo to refine or edit the draft in seconds.</p>
             <ul className="ml-4 list-disc space-y-1 text-muted-foreground/80 ">
-              <li>Smart, Personalized Drafting 
-                <p className="mt-1 text-sm"> 
-                Galleo crafts replies that incorporate your firm’s templates, ensuring consistency and professionalism in every response.
-                </p> 
-              </li>
-              <li>Customizable Content 
-                <p className="mt-1 text-sm">
-                Modify drafts as needed while maintaining structured, legally sound replies tailored to your client’s needs.
-                </p>
-              </li>
-              <li>AI-Powered Refinements 
-                <p className="mt-1 text-sm"> 
-                  Simply prompt Galleo to adjust tone, wording, or details—so you stay in control without the hassle of manual edits.
-                </p>
-              </li>
+              <li>Smart, Personalized Drafting </li>
+              <li>Customizable Content Which Incorporates Your Templates </li>
+              <li>Prompt Galleo to Refine Tone & Wording Instantly </li>
             </ul>
           </div>
         }
@@ -93,22 +81,10 @@ export default function LandingPage() {
             <p>Galleo works like a digital first-year associate, saving you hours by handling trademark tasks instantly—all within Outlook. No extra tools, no disruptions.</p>
             <ul className="ml-4 list-disc space-y-2 text-muted-foreground/80">
               <li>
-                <span className="inline-block">📩</span> Seamless Outlook Integration – Works directly in your inbox.
-                <p className="mt-1 text-sm">
-                  Our AI Lives In Outlook—Just Email Your TM Inquiry And Get An
-                  Instant Draft Response To Clients Ready In Your Outbox..
-                </p>
+                <span className="inline-block">📩</span> Direct Outlook Integration, Sent Instantly to Your Drafts
               </li>
-              <li>Works Whenever, Wherever You Are 
-                <p className="mt-1 text-sm">
-                  Galleo never sleeps. Whether you're in the office, in court, or on the go, it’s always ready to assist.
-                </p>
-              </li>Your First-Year AI Associate 
-              <li> 
-                <p className="mt-1 text-sm">
-                  Saves you 3-5 hours a day by managing trademark inquiries, so you can focus on what matters. 
-                </p>
-              </li>
+              <li>Works Whenever, Wherever You Are
+              </li> 
             </ul>
           </div>
         }
@@ -120,24 +96,24 @@ export default function LandingPage() {
      
       <FeatureSection
         label="Features"
-        title="Effortless Drafting, Fully in Your Control"
+        title="Your Data, Fully Protected"
         description={
           <div className="space-y-4">
-            <p>Save time without sacrificing quality—Galleo drafts replies in your style for consistent, professional client interactions. Need changes? Just prompt Galleo to refine or edit the draft in seconds.</p>
+            <p>Galleo keeps your information secure with encryption at every step. No data storage, no unnecessary access—just complete privacy and control.</p>
             <ul className="ml-4 list-disc space-y-1 text-muted-foreground/80 ">
-              <li>Smart, Personalized Drafting 
+              <li>End-to-End Encryption  
                 <p className="mt-1 text-sm"> 
-                Galleo crafts replies that incorporate your firm’s templates, ensuring consistency and professionalism in every response.
+                Every interaction is encrypted, ensuring confidentiality.
                 </p> 
               </li>
-              <li>Customizable Content 
+              <li>No Data Storage  
                 <p className="mt-1 text-sm">
-                Modify drafts as needed while maintaining structured, legally sound replies tailored to your client’s needs.
+                 Galleo doesn’t store your information —only you have access to your data.
                 </p>
               </li>
-              <li>AI-Powered Refinements 
+              <li>Strict Access Control  
                 <p className="mt-1 text-sm"> 
-                  Simply prompt Galleo to adjust tone, wording, or details—so you stay in control without the hassle of manual edits.
+                  Galleo only reads the emails you select for drafting, ensuring complete privacy and control.
                 </p>
               </li>
             </ul>
