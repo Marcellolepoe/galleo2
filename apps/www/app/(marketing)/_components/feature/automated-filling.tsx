@@ -1,110 +1,44 @@
 "use client";
 
-import { AnimatedList } from "@galleo/ui/components/base/animated-list";
-import { cn } from "@galleo/ui/utils/cn";
+import { useState } from "react";
 
-interface Item {
-  name: string;
-  description: string;
-  icon: string;
-  color: string;
-  time: string;
-}
+export function AIDrafting() {
+  const [draft, setDraft] = useState("Dear Client,\nThank you for reaching out.\nBased on your inquiry, we recommend filing under NICE Class 35 & 41.\nWe’ve also estimated the filing fees to be SGD 450.\nLet us know if you need any refinements!\nBest regards,\n[Your Firm]");
 
-let notifications = [
-  {
-    name: "Application Submitted",
-    description: "Form TM4 filed with IPOS",
-    time: "4 mth ago",
-    icon: "📩",
-    color: "#00C9A7",
-  },
-  {
-    name: "Formalities Check",
-    description: "Application under initial examination",
-    time: "4 mth ago",
-    icon: "📋",
-    color: "#1E86FF",
-  },
-  {
-    name: "Trademark Examination",
-    description: "Detailed review of trademark requirements",
-    time: "3 mth ago",
-    icon: "🔍",
-    color: "#FFB800",
-  },
-  {
-    name: "Publication",
-    description: "Published in Trade Marks Journal for 2 months",
-    time: "2 mth ago",
-    icon: "📢",
-    color: "#FF3D71",
-  },
-  {
-    name: "Registration Certificate",
-    description: "Trademark successfully registered",
-    time: "Now",
-    icon: "✅",
-    color: "#00C9A7",
-  },
-];
+  const refinedDraft = "Dear Valued Client,\nWe appreciate your inquiry and are pleased to assist you.\nAfter careful analysis, we recommend filing under NICE Class 35 & 41.\nThe estimated filing fees amount to SGD 450.\nShould you require any refinements or further clarifications, please do not hesitate to reach out.\nYours sincerely,\n[Your Firm]";
 
-notifications = Array.from({ length: 10 }, () => notifications).flat();
+  const [input, setInput] = useState("Refine the tone to be more professional");
 
-const Notification = ({ name, description, icon, color, time }: Item) => {
+  const handleRefineDraft = () => {
+    if (input.toLowerCase().includes("refine")) {
+      setDraft(refinedDraft);
+    }
+  };
+
   return (
-    <figure
-      className={cn(
-        "relative mx-auto w-full cursor-pointer overflow-hidden rounded-2xl p-4",
-        // animation styles
-        "transition-all duration-200 ease-in-out hover:scale-[103%]",
-        // light styles
-        "bg-white [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]",
-        // dark styles
-        "transform-gpu dark:bg-transparent dark:backdrop-blur-md dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]",
-      )}
-    >
-      <div className="flex flex-row items-center gap-3">
-        <div
-          className="flex size-10 items-center justify-center rounded-2xl"
-          style={{
-            backgroundColor: color,
-          }}
-        >
-          <span className="text-lg">{icon}</span>
+    <div style={{ padding: "16px", borderRadius: "8px", border: "1px solid #ddd", boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)", fontFamily: "inherit" }}>
+      <div>
+        <div style={{ padding: "12px", border: "1px solid #ccc", borderRadius: "6px", background: "#fff", fontSize: "14px", minHeight: "100px", fontFamily: "inherit" }}>
+          <pre style={{ whiteSpace: "pre-wrap", margin: 0 }}>{draft}</pre>
         </div>
-        <div className="flex flex-col overflow-hidden">
-          <figcaption className="flex flex-row items-center whitespace-pre font-medium text-lg dark:text-white ">
-            <span className="text-xs sm:text-lg">{name}</span>
-            <span className="mx-1">·</span>
-            <span className="text-gray-500 text-xs">{time}</span>
-          </figcaption>
-          <p className="font-normal text-xs sm:text-sm dark:text-white/60">
-            {description}
-          </p>
+
+        <div style={{ display: "flex", flexDirection: "column", gap: "8px", marginTop: "12px" }}>
+          <input 
+            type="text" 
+            value={input} 
+            onChange={(e) => setInput(e.target.value)} 
+            style={{ padding: "8px", borderRadius: "4px", border: "1px solid #ccc", fontFamily: "inherit", width: "100%" }}
+          />
+          <button 
+            onClick={handleRefineDraft} 
+            style={{ padding: "8px 12px", borderRadius: "4px", background: "#007bff", color: "#fff", border: "none", cursor: "pointer", fontFamily: "inherit", boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)", transition: "background 0.2s", fontWeight: "500" }}
+            onMouseOver={(e) => e.currentTarget.style.background = "#0056b3"}
+            onMouseOut={(e) => e.currentTarget.style.background = "#007bff"}
+          >
+            Enter
+          </button>
         </div>
       </div>
-    </figure>
-  );
-};
-
-export function AutomatedFilling({
-  className,
-}: {
-  className?: string;
-}) {
-  return (
-    <div
-      className={cn(
-        "relative mx-auto flex h-96 flex-col overflow-hidden rounded-lg bg-background md:border md:p-6 md:shadow-xl",
-        className,
-      )}
-    >
-      <AnimatedList>
-        {notifications.map((item, idx) => (
-          <Notification {...item} key={`${item.name}-${idx}`} />
-        ))}
-      </AnimatedList>
     </div>
   );
 }
