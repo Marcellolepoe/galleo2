@@ -8,11 +8,11 @@ export function AIDrafting() {
   const isInView = useInView(containerRef, { once: true, margin: "-100px" });
 
   const [draft, setDraft] = useState(
-    `Dear Client,\n\nThank you for reaching out.\n\nBased on your inquiry, we recommend filing under NICE Class 35 & 41.\n\nWe’ve also estimated the filing fees to be SGD 450.\n\nLet us know if you need any refinements!\n\nBest regards,\n\n[Your Firm]`
+    `Hey there,\n\nAppreciate you reaching out!\n\nYou’ll probably want to file under Class 35 & 41 for your trademark.\n\nThe filing fees should be around SGD 450.\n\nLet me know if you need any changes!\n\nCheers,\n\n[Your Firm]`
   );
   const [isGenerating, setIsGenerating] = useState(false);
 
-  const refinedDraft = `Dear Valued Client,\n\nWe appreciate your inquiry and are pleased to assist you.\n\nAfter careful analysis, we recommend filing under NICE Class 35 & 41.\n\nThe estimated filing fees amount to SGD 450.\n\nShould you require any refinements or further clarifications, please do not hesitate to reach out.\n\nYours sincerely,\n\n[Your Firm]`;
+  const refinedDraft = `Dear Client,\n\nThank you for your inquiry.\n\nAfter reviewing your request, we recommend filing under NICE Class 35 & 41 to ensure proper trademark protection.\n\nThe estimated filing fees for this application are SGD 450.\n\nPlease let us know if you require any refinements.\n\nBest regards,\n\n[Your Firm]`;
 
   const handleRefineDraft = () => {
     setIsGenerating(true);
@@ -48,7 +48,7 @@ export function AIDrafting() {
         <div className="flex flex-col gap-2">
           <input
             type="text"
-            value="Refine your tone"
+            value="Make this formal and professional"
             readOnly
             className="w-full px-4 py-2 border border-gray-300 rounded-md bg-gray-100 text-gray-600 text-sm cursor-not-allowed"
           />
