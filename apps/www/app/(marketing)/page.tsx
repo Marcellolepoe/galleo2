@@ -106,7 +106,7 @@ export default function LandingPage() {
               <li>No Data Storage </li>
               <li>Strict Access Control  
                 <p className="mt-1 text-sm"> 
-                  Galleo only reads the emails you select for drafting, ensuring complete privacy and control.
+                  Galleo only reads the emails you select for drafting, ensuring complete privacy and control 123.
                 </p>
               </li>
             </ul>
