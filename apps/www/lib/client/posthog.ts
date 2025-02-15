@@ -1,6 +1,4 @@
-
-
-export function get// POSTHOG DISABLED
-  return null; // Disable // POSTHOG DISABLED
+// POSTHOG DISABLED
+export function getPosthog() {
+  return null;
 }
-

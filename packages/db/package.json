@@ -34,7 +34,7 @@
     "format": "bun x @biomejs/biome format . --write",
     "lint": "bun x @biomejs/biome lint . --write",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false",
-    "with-env": "dotenvx run -f ../../.env -- "
+    "with-env": "pnpm run build:node"
   },
   "dependencies": {
     "@galleo/result": "workspace:*",

@@ -4,18 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev:landing": "bun with-env bun run dev:node",
-    "dev:node": "next dev --port 6969",
-    "dev:cloudflare": "bun x dotenvx decrypt -f ../../.env  --stdout > .dev.vars && wrangler dev --port 8771",
-    "build": "pnpm with-env pnpm run build:node",
-    "build:node": "next build",
-    "build:cloudflare": "opennextjs-cloudflare",
-    "with-env": "dotenvx run -f ../../.env --",
-    "start": "pnpm with-env pnpm run next start",
-    "clean": "git clean -xdf .turbo node_modules .next .cache",
-    "lint": "bun x @biomejs/biome lint . --write",
-    "format": "bun x @biomejs/biome format . --write",
-    "typecheck": "tsc --noEmit --emitDeclarationOnly false"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
   "dependencies": {
     "@galleo/db": "workspace:*",

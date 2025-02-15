@@ -8,7 +8,7 @@
   "scripts": {
     "dev:ext": "bun x dotenvx decrypt -f ../../.env  --stdout > .dev.vars && wrangler dev --port 6922",
     "deploy": "wrangler deploy --minify",
-    "with-env": "dotenvx run -f ../../.env --",
+    "with-env": "pnpm run build:node",
     "auth": "bun with-env bun run auth-migrate",
     "auth-migrate": "bun x @better-auth/cli@latest migrate --config auth.config.ts",
     "clean": "git clean -xdf .wrangler node_modules .dev.vars"

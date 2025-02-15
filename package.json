@@ -25,7 +25,6 @@
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@changesets/cli": "^2.27.12",
-    "@dotenvx/dotenvx": "^1.25.1",
     "@galleo/typescript": "workspace:*",
     "turbo": "2.3.3",
     "typescript": "catalog:"
