@@ -7,6 +7,7 @@ await createJiti(fileURLToPath(import.meta.url)).import("./lib/env");
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  output: "standalone",
   // PostHog disabled - removing tracking rewrites
 rewrites() {
   return [];
