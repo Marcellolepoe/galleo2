@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "postbuild": "ls -la .next || echo '.next directory not found'"
   },
   "dependencies": {
     "@galleo/db": "workspace:*",
@@ -30,4 +31,5 @@
     "tailwindcss": "catalog:",
     "typescript": "catalog:"
   }
+  
 }
