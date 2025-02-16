@@ -2,14 +2,12 @@
     "build": {
       "env": {
         "NEXT_PUBLIC_ENV": "production"
-      }
+      },
+      "command": "pnpm run build",
+      "outputDirectory": "apps/www/.next"
     },
-    "outputDirectory": "apps/www/.next",
-    "rewrites": [
-      {
-        "source": "/(.*)",
-        "destination": "/apps/www/$1"
-      }
+    "routes": [
+      { "src": "/(.*)", "dest": "/apps/www/.next/$1" }
     ]
   }
   

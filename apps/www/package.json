@@ -7,7 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "postbuild": "ls -la .next || echo '.next directory not found'"
+    "postbuild": "if exist .next (echo .next exists) else (echo .next directory not found)'"
   },
   "dependencies": {
     "@galleo/db": "workspace:*",
