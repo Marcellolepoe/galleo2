@@ -7,7 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "postbuild": "Get-ChildItem .next -Force || echo '.next directory not found'"
+    "postbuild": "ls -la .next || echo '.next directory not found'"
   },
   "dependencies": {
     "@galleo/db": "workspace:*",
