@@ -2,8 +2,14 @@
     "build": {
       "env": {
         "NEXT_PUBLIC_ENV": "production"
-      },
-      "outputDirectory": ".next"
-    }
+      }
+    },
+    "outputDirectory": "apps/www/.next",
+    "rewrites": [
+      {
+        "source": "/(.*)",
+        "destination": "/apps/www/$1"
+      }
+    ]
   }
   
